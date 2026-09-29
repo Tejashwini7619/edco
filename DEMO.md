@@ -1,85 +1,80 @@
-# DealMemory: 3-Minute Hackathon Demo Script ⚡
-
-> **Target Audience**: Microsoft Hackathon Judges & Sales Leadership  
-> **Total Time**: 3 minutes  
-> **Key Message**: Real persistent AI memory with Hindsight solves pre-call prep, eliminates hallucination with grounded citations, and unlocks cross-deal sales tactics that increase win rates by +49%.
+# DealMemory: 3-Minute Live Hackathon Demo Script 🎬
+### Theme: "AI Agents That Learn Using Hindsight" (Hack with Hyderabad 3.0)
 
 ---
 
-## ⏱️ Demo Overview Timeline
+## ⏱️ Timeline & Act Structure
 
-| Timestamp | Segment | Key Feature Shown | Demo Impact Moment |
-| :--- | :--- | :--- | :--- |
-| **0:00 – 0:35** | **Act 1**: The Messy Deal Workspace | Deal List, Risk Signals, Keyboard Nav (`J`/`K`) | Memory-derived risk scores, not random numbers |
-| **0:35 – 1:15** | **Act 2**: The 30-Second Pre-Call Brief | `reflect()`, Clickable Citations, Teams Card | 3 lines of status + clickable `[1]` citation chips |
-| **1:15 – 1:55** | **Act 3**: Ingest Studio & Memory Defense | `retain()`, Live Extraction, Secret Scrubbing | The "Aha!" moment: watching facts & entities extracted live |
-| **1:55 – 2:30** | **Act 4**: Memory Inspector & Changed Beliefs | Auto-Consolidated Observations, Belief History | Proves memory is real: Marcus Vance sentiment shift |
-| **2:30 – 3:00** | **Act 5**: Cross-Deal Tactic Recommender | `reflect()` across past outcomes, Win-Rate Lift | "+49% win rate when using Phased Ramp against ApexCloud" |
-
----
-
-## 🎬 Step-by-Step Demo Walkthrough
-
-### 📍 Act 1: The Messy Deal Workspace (0:00 – 0:35)
-1. **Presenter**: *"Sales reps waste 45 minutes before every meeting digging through messy CRM notes. Here in DealMemory, we have 13 active enterprise deals."*
-2. Navigate the workspace table using **`J` and `K`** on the keyboard.
-3. Highlight the **Memory Risk Signal** column:
-   - Point out **Acme Financial ($280k ARR)**: Risk score is **48 (Medium)** because *"CFO pushed back on \$280k multi-year commit; competitor ApexCloud offering 30% bundle discount."*
-   - Point out **CloudScale Logistics ($340k ARR)**: Risk score is **74 (High)** because *"Champion Marcus Vance changed sentiment from enthusiastic to silent blocker."*
-4. Press **`Enter`** or click on **Acme Financial**.
+```
+[0:00 - 0:30] Act 1: The Problem (Acme Financial 5th Call, 40 Mins of Notes)
+[0:30 - 1:15] Act 2: Memory OFF vs. Memory ON Split View (/compare)
+[1:15 - 1:50] Act 3: Live Call Ingestion & Memory Defense (/ingest)
+[1:50 - 2:15] Act 4: Memory Inspector & Stakeholder Stance Reversal (/deals/deal-swiggy-delivery)
+[2:15 - 2:40] Act 5: The Learning Curve Benchmark (/learning-curve)
+[2:40 - 3:00] Act 6: Cross-Deal Tactic Recommender & Wrap-up (/tactics)
+```
 
 ---
 
-### 📍 Act 2: The 30-Second Pre-Call Brief (0:35 – 1:15)
-1. **Presenter**: *"I have a call with Acme's CFO Evelyn Vance in 5 minutes. Instead of reading 6 past documents, I look at the Pre-Call Brief generated via Hindsight's `reflect()` operation."*
-2. **Show the 3-line Status**:
-   - Status line 1: Deal in commercial negotiation for \$280k ARR.
-   - Status line 2: Technical & InfoSec review approved by VP Eng David Zhao and CRO Helena Cross.
-   - Status line 3: CFO reviewing phased \$60k Q4 ramp vs ApexCloud.
-3. **The Clickable Citation Moment**:
-   - Click on citation chip **`[1]`** next to Evelyn Vance's pricing objection.
-   - The **Citation Drawer** slides in from the right, displaying the exact source memory from the September 12 pricing negotiation, timestamp, context label, and Memory Defense certification badge.
-4. **Show the Microsoft Teams Export**:
-   - Click **"Share to Teams"** to demonstrate instant Adaptive Card JSON payload generation for Microsoft Teams side panels.
+## 🎭 Step-by-Step Presentation Script
+
+### **Act 1: The Problem (0:00 - 0:30)**
+- **Screen:** Open [`http://localhost:3000`](http://localhost:3000) (Deal Workspace).
+- **Action:** Point to **Acme Financial Group** ($280k ARR, Negotiation stage).
+- **Spoken Script:**
+  > *"Judges, imagine you are an Enterprise Account Executive. In 2 minutes, you have a critical negotiation call with Acme Financial's CFO. Over the last 4 months, your team had 5 discovery calls, security audits, and pricing discussions across 6 stakeholders.
+  > If you spend 45 minutes re-reading messy CRM notes, you are wasting valuable time. If you use a generic stateless AI chatbot, it only knows what you paste into the prompt.
+  > Let me show you how DealMemory solves this with persistent Hindsight memory."*
 
 ---
 
-### 📍 Act 3: Ingest Studio & Memory Defense (1:15 – 1:55)
-1. **Presenter**: *"What happens when a new call happens? Let's go to Ingest Studio."*
-2. Click **"Ingest Studio"** in the top navigation.
-3. Under *"Or Load Sample Interaction"*, click **"Acme Financial - CFO Pricing Sync"** (or paste a custom transcript).
-4. Point out the untrusted input defense:
-   - Click the sample *"Untrusted Note with PII & Prompt Injection Test"* to show **Memory Defense** scrubbing API keys (`[REDACTED:openai_api_key]`), SSNs, and neutralizing injection overrides in real-time.
-5. Click **"Execute `retain()`"**:
-   - Watch the live animation decompose the unstructured dialogue into atomic facts and linked entity graph pills (`David Zhao`, `Evelyn Vance`, `ApexCloud`, `\$60k`, `\$280k`).
-6. Click **"View Deal Brief & Inspector"** to show instant memory persistence.
+### **Act 2: The Signature Pitch — Memory Split-View (0:30 - 1:15)**
+- **Screen:** Click **"Memory Split-View"** in top navigation ([`/compare`](http://localhost:3000/compare)).
+- **Action:** Select **Acme Financial** and click **Analyze**.
+- **Spoken Script:**
+  > *"Here is our signature feature: the Memory Split-View.
+  > On the left, we see standard stateless AI. Given only the latest CRM note, it gives generic, superficial sales advice. It completely misses the CFO's $240k budget cap, doesn't know InfoSec passed on August 28th, and cannot cite a single fact.
+  > On the right, look at DealMemory powered by Hindsight. It instantly recalls Evelyn Vance's exact $240k counter-offer from September 12th, cites David Zhao's latency stress test, and provides clickable citation chips that trace directly to source memories.
+  > Every single bullet point is grounded — zero hallucination."*
 
 ---
 
-### 📍 Act 4: Memory Inspector & Belief Evolution (1:55 – 2:30)
-1. Navigate to **CloudScale Logistics** (`/deals/deal-cloudscale-logistics`) and click the **"Memory Inspector"** tab.
-2. **Presenter**: *"Naïve vector search can only find keywords. Hindsight tracks evolving beliefs over time. Look at how our understanding of CTO Marcus Vance evolved."*
-3. Walk through the 4 historical steps in the timeline:
-   - **July 10**: Marcus is an *Enthusiastic Champion* declaring the product a "no-brainer".
-   - **July 25**: Marcus is a *Proactive Sponsor* requesting fast-track paperwork.
-   - **August 18**: Marcus turns *Unresponsive / Silent* following a board cost-freeze.
-   - **September 10**: Marcus becomes a *Passive Blocker* after InfoSec raises driver GPS privacy concerns.
-4. **Presenter**: *"The agent knows Marcus is not unresponsive because he dislikes us—he's protecting his career after an InfoSec audit. The brief automatically recommends presenting the Azure Private Link enclave to unblock him."*
+### **Act 3: Live Ingestion & Memory Defense (1:15 - 1:50)**
+- **Screen:** Click **"Ingest Studio"** in top navigation ([`/ingest`](http://localhost:3000/ingest)).
+- **Action:** Click sample button: *"1. Acme Financial - Pricing & Competitor FUD Push"*. Click **"Execute retain()"**.
+- **Spoken Script:**
+  > *"Now watch what happens when a new call ends.
+  > We paste raw, messy transcript text. Before anything touches memory, our Memory Defense Gateway scrubs credentials and neutralizes prompt injections.
+  > Then, Hindsight's `retain()` engine extracts entities and facts in real time. Notice how ApexCloud Enterprise, Evelyn Vance, and the $195k competitor pricing are immediately linked into our persistent knowledge graph."*
 
 ---
 
-### 📍 Act 5: Cross-Deal Tactic Recommender (2:30 – 3:00)
-1. Click **"Tactic Recommender"** in the top header.
-2. Type or select: **"How to beat ApexCloud Enterprise on price when they offer 30-40% bundle discounts?"**
-3. Click **"Recommend Tactic"**:
-   - Show the **Empirical Win-Rate Lift**: **78% win rate with tactic vs. 29% without**.
-   - Show the **Winning Tactic**: *"Never match software discounts. Attack their proprietary lock-in, calculate true TCO including \$85k/yr egress fees, and offer a Phased Milestone Ramp."*
-   - Show the **Supporting Past Deals**: Point to **NovaMed Health (\$420k Won)** and **Strata Commerce (\$260k Lost)** as verifiable proof.
-4. **Closing Statement**: *"DealMemory transforms raw sales conversations into persistent institutional memory and winning revenue tactics, grounded in Hindsight and Microsoft Azure."*
+### **Act 4: Memory Inspector & Stakeholder Stance Reversal (1:50 - 2:15)**
+- **Screen:** Navigate to **Swiggy** deal page ([`/deals/deal-swiggy-delivery`](http://localhost:3000/deals/deal-swiggy-delivery)), click **"Memory Inspector"** tab.
+- **Action:** Point to the observation card for **Rajesh Kumar (VP Engineering)**.
+- **Spoken Script:**
+  > *"A critical problem in sales is stakeholder belief evolution.
+  > Look at Swiggy Limited's VP of Engineering, Rajesh Kumar. On August 14th, he was an aggressive blocker, stating his team had zero bandwidth for complex SDKs.
+  > But look at what Hindsight recorded on August 22nd: after a 45-minute Kafka sandbox test, Rajesh underwent a complete 180-degree stance reversal into our primary deal champion.
+  > Hindsight doesn't just store static embeddings — it auto-consolidates evolving beliefs over time."*
 
 ---
 
-## 🎯 Tips for the Presenter
-- Use `⌘+K` / `Ctrl+K` during the presentation to smoothly jump between deals.
-- Click citation chips to emphasize that the AI never invents numbers or quotes.
-- Emphasize the +49% win rate impact as the commercial ROI for enterprise sales teams.
+### **Act 5: The Learning Curve (2:15 - 2:40)**
+- **Screen:** Click **"Learning Curve"** in top navigation ([`/learning-curve`](http://localhost:3000/learning-curve)).
+- **Action:** Show the interactive SVG progression curve (28% -> 58% -> 82% -> 96%). Click on **Checkpoint 4 (20+ Notes)**.
+- **Spoken Script:**
+  > *"Because all deals share one persistent memory bank, the agent gets smarter with every interaction.
+  > We built an objective 4-pillar benchmark testing Stakeholder Coverage, Objection Detection, Temporal Grounding, and Tactic Precision.
+  > With 1 note, the agent scores 28/100. By interaction 20, as memory compounds, the score reaches 96/100 — a 242% accuracy gain."*
+
+---
+
+### **Act 6: Cross-Deal Tactic Recommender & Wrap-Up (2:40 - 3:00)**
+- **Screen:** Click **"Tactic Recommender"** ([`/tactics`](http://localhost:3000/tactics)).
+- **Action:** Point to the **"Phased Milestone Ramp"** tactic (+58% win rate).
+- **Spoken Script:**
+  > *"Finally, Hindsight `reflect()`s across 17 past closed deals.
+  > When facing migration cost objections, straight discounting yields only a 28% win rate. But offering a Phased Milestone Ramp achieves an 86% empirical win rate — a +58% win-rate lift!
+  > DealMemory turns past sales experience into an unfair strategic advantage.
+  > Real memory, real grounding, zero faking. Thank you!"*

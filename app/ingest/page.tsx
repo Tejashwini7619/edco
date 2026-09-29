@@ -337,15 +337,24 @@ Marcus Vance (CTO): Fantastic news. With InfoSec satisfied, I will present the \
 
               {/* Bottom Action */}
               {ingestResult && (
-                <div className="pt-4 border-t border-border mt-4 flex items-center justify-between text-xs">
-                  <span className="text-muted-foreground">Updated Deal Memory Bank</span>
-                  <button
-                    onClick={() => (window.location.href = `/deals/${selectedDealId}`)}
-                    className="px-3 py-1.5 rounded bg-secondary hover:bg-secondary/80 text-sky-400 font-medium border border-border flex items-center space-x-1.5 transition-colors"
-                  >
-                    <span>View Deal Brief & Inspector</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                <div className="pt-4 border-t border-border mt-4 flex flex-wrap items-center justify-between gap-2 text-xs">
+                  <span className="text-muted-foreground font-mono text-[11px]">Bank Updated ({ingestResult.operationId || 'async'})</span>
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={() => (window.location.href = `/compare`)}
+                      className="px-2.5 py-1.5 rounded bg-secondary hover:bg-secondary/80 text-muted-foreground hover:text-foreground font-medium border border-border flex items-center space-x-1 transition-colors"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+                      <span>Compare Split-View</span>
+                    </button>
+                    <button
+                      onClick={() => (window.location.href = `/deals/${selectedDealId}`)}
+                      className="px-3 py-1.5 rounded bg-sky-600 hover:bg-sky-500 text-white font-medium flex items-center space-x-1.5 transition-colors shadow-sm"
+                    >
+                      <span>View Pre-Call Brief</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
                 </div>
               )}
             </div>

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, BrainCircuit, Shield, Sparkles, RefreshCw } from 'lucide-react';
+import { Search, BrainCircuit, Shield, Sparkles, RefreshCw, Zap, TrendingUp } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 
 interface HeaderProps {
@@ -45,6 +45,28 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCommandPalette, onReSeed, 
               Workspace
             </Link>
             <Link
+              href="/compare"
+              className={`px-2.5 py-1 rounded-md transition-colors flex items-center space-x-1 ${
+                pathname.startsWith('/compare')
+                  ? 'bg-secondary text-foreground font-medium'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+              }`}
+            >
+              <Zap className="w-3 h-3 text-sky-400" />
+              <span>Memory Split-View</span>
+            </Link>
+            <Link
+              href="/learning-curve"
+              className={`px-2.5 py-1 rounded-md transition-colors flex items-center space-x-1 ${
+                pathname.startsWith('/learning-curve')
+                  ? 'bg-secondary text-foreground font-medium'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
+              }`}
+            >
+              <TrendingUp className="w-3 h-3 text-emerald-400" />
+              <span>Learning Curve</span>
+            </Link>
+            <Link
               href="/tactics"
               className={`px-2.5 py-1 rounded-md transition-colors flex items-center space-x-1 ${
                 pathname.startsWith('/tactics')
@@ -52,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenCommandPalette, onReSeed, 
                   : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
               }`}
             >
-              <Sparkles className="w-3 h-3 text-sky-400" />
+              <Sparkles className="w-3 h-3 text-amber-400" />
               <span>Tactic Recommender</span>
             </Link>
             <Link

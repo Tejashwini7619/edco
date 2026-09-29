@@ -752,10 +752,276 @@ Elena Rostova: SynapseFlow maintains cryptographic lineage across every cited sc
         content: `Closed Won \$460,000 ARR with 3-year term. Key winning tactic: 21 CFR Part 11 audit trail compliance documentation vs ApexCloud proprietary lock-in.`
       }
     ]
+  },
+  {
+    id: 'deal-razorpay-payments',
+    name: 'Razorpay - Real-Time UPI Fraud & Ledger Agent',
+    company: 'Razorpay Software Pvt Ltd',
+    industry: 'Fintech / Payments Infra',
+    stage: 'Negotiation',
+    value: 220000,
+    owner: 'Arjun Mehta',
+    closeDate: '2026-10-28',
+    lastContactDate: '2026-09-26',
+    risk: {
+      level: 'low',
+      score: 24,
+      reason: 'PCI-DSS 4.0 InfoSec audit cleared; CPO requested final INR pricing structure with localized Azure central-india latency SLA.',
+      contributingFactors: [
+        'VP Security approved zero-retention HSM tokenization architecture',
+        'Salesforce Agentforce rejected due to data residency in US-East',
+        'Commercial term sheet submitted at ₹1.85 Cr ($220k)'
+      ],
+      lastAssessed: '2026-09-26'
+    },
+    nextStep: 'Submit localized Master Services Agreement (MSA) with Azure Pune/Mumbai region pinning to legal counsel',
+    competitors: ['Salesforce Agentforce'],
+    tags: ['deal:deal-razorpay-payments', 'region:apac', 'industry:fintech', 'competitor:salesforce'],
+    interactions: [
+      {
+        id: 'int-rzp-1',
+        dealId: 'deal-razorpay-payments',
+        type: 'discovery_call',
+        title: 'Discovery with Head of Platform & VP Engineering',
+        timestamp: '2026-08-10T11:00:00Z',
+        author: 'Arjun Mehta',
+        context: 'discovery call',
+        content: `Arjun Mehta: Thanks for taking the time, Vikram and Sneha. How is Razorpay approaching AI agents for UPI transaction dispute resolution?
+Vikram Malhotra (Head of Platform): Look... honestly, we get pitched 5 AI tools a week. Salesforce came in last Thursday showing Agentforce. But here is the thing: we process 14,000 TPS on peak UPI days.
+Sneha Iyer (VP Engineering): Exactly. If an LLM agent hallucinates a ledger settlement or routes customer card numbers outside RBI data localization boundaries, we get penalized by the Reserve Bank of India immediately.
+Arjun Mehta: Our architecture runs entirely in your Azure Central India / Mumbai subscription with zero telemetry leaving your VPC.
+Vikram Malhotra: That sounds promising. We need sub-40ms decisioning for instant chargeback validation. Send over the architectural spec.`
+      },
+      {
+        id: 'int-rzp-2',
+        dealId: 'deal-razorpay-payments',
+        type: 'security_review',
+        title: 'RBI & PCI-DSS 4.0 Compliance Technical Audit',
+        timestamp: '2026-08-25T14:30:00Z',
+        author: 'Arjun Mehta',
+        context: 'security audit',
+        content: `Attendees: Arjun Mehta, Vikram Malhotra, Ananya Desai (Chief Information Security Officer).
+Ananya Desai (CISO): I reviewed your SOC2 and PCI-DSS compliance report. Salesforce Agentforce stores agent memory buffers in US multi-tenant shards. Does SynapseFlow support Hardware Security Module (HSM) key isolation on Azure?
+Markus (Solutions Architect): Yes. All memory embeddings and session state are encrypted with your Azure Key Vault Managed HSM keys.
+Ananya Desai: That completely satisfies our RBI mandate for payment aggregation. Infosec gives preliminary approval.`
+      },
+      {
+        id: 'int-rzp-3',
+        dealId: 'deal-razorpay-payments',
+        type: 'pricing_call',
+        title: 'Commercial Negotiation with Finance & Procurement',
+        timestamp: '2026-09-26T16:00:00Z',
+        author: 'Arjun Mehta',
+        context: 'pricing call',
+        content: `Vikram Malhotra: Finance reviewed the quote of ₹1.85 Cr (\$220,000 ARR). Salesforce offered a 45% discount on their CRM bundle, but their compliance risk is too high. If you can include dedicated 99.99% latency SLA on Azure Central India, we will execute by mid-October.
+Arjun Mehta: Done. We will append the 99.99% uptime and sub-40ms latency SLA into the commercial addendum.`
+      }
+    ]
+  },
+  {
+    id: 'deal-swiggy-delivery',
+    name: 'Swiggy - Hyperlocal Dispatch & Driver Support Copilot',
+    company: 'Swiggy Limited',
+    industry: 'Logistics / Quick Commerce',
+    stage: 'Evaluation',
+    value: 290000,
+    owner: 'Pooja Nair',
+    closeDate: '2026-11-15',
+    lastContactDate: '2026-09-27',
+    risk: {
+      level: 'medium',
+      score: 42,
+      reason: 'Engineering team initially strongly resisted integration complexity; stance reversed after 2-day sandbox trial showed Kafka connector zero-code setup.',
+      contributingFactors: [
+        'VP Eng Rajesh Kumar reversed from hard objection to strong internal sponsor',
+        'CPO requested multi-lingual vernacular support benchmark (Hindi, Telugu, Kannada, Tamil)',
+        'Budget allocated under Q3 Quick Commerce productivity pool'
+      ],
+      lastAssessed: '2026-09-27'
+    },
+    nextStep: 'Demonstrate 4-language Indian vernacular response benchmark to CPO Rohit Sen on Tuesday',
+    competitors: ['Gong / Clari', 'Internal DIY Python Stack'],
+    tags: ['deal:deal-swiggy-delivery', 'region:apac', 'industry:logistics', 'competitor:gong'],
+    interactions: [
+      {
+        id: 'int-swg-1',
+        dealId: 'deal-swiggy-delivery',
+        type: 'discovery_call',
+        title: 'Initial Discovery - Heavy Engineering Resistance',
+        timestamp: '2026-08-14T10:00:00Z',
+        author: 'Pooja Nair',
+        context: 'discovery call',
+        content: `Pooja Nair: Thanks Rajesh and Rohit for meeting. We understand you manage over 300,000 delivery delivery partners across 500 Indian cities.
+Rajesh Kumar (VP Engineering): Look Pooja, I have to be blunt. My team has zero bandwidth to rewrite our Go dispatch engine or integrate a complicated SDK. Every vendor claims easy integration, but it usually takes 6 months of engineering hell. Unless this plugs directly into our Apache Kafka streams without custom wrapper code, it is a hard no for me.
+Rohit Sen (CPO): We do have a real problem though with 40,000 daily delivery partner support tickets in vernacular languages.
+Pooja Nair: What if we set up a sandbox using our native Kafka event consumer in 48 hours without touching your Go core?
+Rajesh Kumar: If you can ingest 5,000 sample dispatch events from our test topic without dropping a packet, I'll review it. Otherwise, let's not waste each other's time.`
+      },
+      {
+        id: 'int-swg-2',
+        dealId: 'deal-swiggy-delivery',
+        type: 'sandbox_review',
+        title: 'Sandbox Validation & Major Stakeholder Stance Reversal',
+        timestamp: '2026-08-22T15:00:00Z',
+        author: 'Pooja Nair',
+        context: 'sandbox debrief',
+        content: `Attendees: Pooja Nair, Rajesh Kumar (VP Eng), Rohit Sen (CPO).
+Rajesh Kumar (VP Engineering): I want to start by apologizing for my skepticism last week. We connected your managed Kafka stream sink on Tuesday morning. In less than 45 minutes, your engine was auto-extracting address anomalies and driver dispute sentiment across 20,000 live events with zero packet drops and under 30ms latency.
+Rohit Sen: That is remarkable.
+Rajesh Kumar: I have completely changed my mind. This eliminates 4 months of in-house microservice engineering. I am going to push this as a core Q3 initiative.
+Pooja Nair: That is fantastic to hear, Rajesh. Let's benchmark the vernacular language models next.`
+      },
+      {
+        id: 'int-swg-3',
+        dealId: 'deal-swiggy-delivery',
+        type: 'technical_demo',
+        title: 'Vernacular Multi-Lingual Driver Voice & Chat Benchmark',
+        timestamp: '2026-09-27T11:30:00Z',
+        author: 'Pooja Nair',
+        context: 'vernacular demo',
+        content: `Demonstrated real-time audio transcript synthesis in Hindi, Kannada, Telugu, and Tamil for delivery partner dispute calls.
+Rohit Sen (CPO): The dialect handling in Kannada and Hindi is remarkably accurate.
+Rajesh Kumar: Let's fast-track commercial review for ₹2.40 Cr (\$290,000 ARR).`
+      }
+    ]
+  },
+  {
+    id: 'deal-zerodha-brokerage',
+    name: 'Zerodha - High-Throughput Trade Compliance Intelligence',
+    company: 'Zerodha Broking Limited',
+    industry: 'Capital Markets / WealthTech',
+    stage: 'Proposal',
+    value: 385000,
+    owner: 'Arjun Mehta',
+    closeDate: '2026-11-30',
+    lastContactDate: '2026-09-25',
+    risk: {
+      level: 'low',
+      score: 18,
+      reason: 'Engineering leadership satisfied with completely self-hosted container deployment with zero external SaaS telemetry.',
+      contributingFactors: [
+        'Zero cloud egress requirement validated',
+        'SEBI regulatory compliance review in final stage',
+        'High executive champion alignment'
+      ],
+      lastAssessed: '2026-09-25'
+    },
+    nextStep: 'Deliver signed air-gapped container specification to systems engineering team',
+    competitors: ['In-House Custom C++ Engine'],
+    tags: ['deal:deal-zerodha-brokerage', 'region:apac', 'industry:fintech', 'tier:enterprise'],
+    interactions: [
+      {
+        id: 'int-zrd-1',
+        dealId: 'deal-zerodha-brokerage',
+        type: 'discovery_call',
+        title: 'Architecture Review with CTO & Core Systems Team',
+        timestamp: '2026-08-05T14:00:00Z',
+        author: 'Arjun Mehta',
+        context: 'architecture call',
+        content: `Kailash Nadh (CTO): We run a lean, self-sufficient open-source infrastructure. We do not use third-party proprietary black boxes. If this software cannot run inside our private Kubernetes clusters with zero network egress to external vendors, we cannot even discuss pricing.
+Arjun Mehta: SynapseFlow provides fully packaged Docker / OCI containers with offline Hindsight memory models that operate in strict air-gapped environments.
+Kailash Nadh: Run a benchmark on 500,000 order book logs on an isolated server and send the binary telemetry.`
+      },
+      {
+        id: 'int-zrd-2',
+        dealId: 'deal-zerodha-brokerage',
+        type: 'technical_validation',
+        title: 'Air-Gapped Performance Test on 10M Market Tick Events',
+        timestamp: '2026-09-25T16:30:00Z',
+        author: 'Arjun Mehta',
+        context: 'validation review',
+        content: `Completed validation of 10M market tick audit events. Processed in 4.2 seconds with zero external network packets.
+Kailash Nadh: The architecture is clean, minimal, and respects Unix philosophy. Proposal for ₹3.2 Cr approved for contract preparation.`
+      }
+    ]
+  },
+  {
+    id: 'deal-freshworks-crm',
+    name: 'Freshworks - Unified CX Agentic Routing Suite',
+    company: 'Freshworks Inc',
+    industry: 'Enterprise Software / CRM',
+    stage: 'Negotiation',
+    value: 195000,
+    owner: 'Sarah Jenkins',
+    closeDate: '2026-10-20',
+    lastContactDate: '2026-09-28',
+    risk: {
+      level: 'medium',
+      score: 35,
+      reason: 'Procurement requested price match against Salesforce Agentforce bundle discount; countered with Phased Milestone Ramp.',
+      contributingFactors: [
+        'Salesforce offering 40% discount if bundled with Sales Cloud',
+        'Freshworks Head of Product strongly prefers our open API architecture',
+        'Phased milestone rollout proposed to bypass procurement deadlock'
+      ],
+      lastAssessed: '2026-09-28'
+    },
+    nextStep: 'Finalize Schedule A pricing tier with VP Procurement on Monday',
+    competitors: ['Salesforce Agentforce', 'Gong / Clari'],
+    tags: ['deal:deal-freshworks-crm', 'industry:saas', 'competitor:salesforce'],
+    interactions: [
+      {
+        id: 'int-fw-1',
+        dealId: 'deal-freshworks-crm',
+        type: 'discovery_call',
+        title: 'Initial Discovery with VP Product & Engineering',
+        timestamp: '2026-08-18T15:00:00Z',
+        author: 'Sarah Jenkins',
+        context: 'discovery call',
+        content: `Deepak Balaji (VP Product): We need an intelligent agent layer that routes customer escalation tickets across our omnichannel suite. Salesforce is pitching Agentforce heavily.
+Sarah Jenkins: Agentforce locks you into Salesforce Data Cloud and charges per conversation token. We offer flat-rate instance licensing with full data ownership.
+Deepak Balaji: That is our biggest grievance with Salesforce. Let's do a fast-track POC.`
+      },
+      {
+        id: 'int-fw-2',
+        dealId: 'deal-freshworks-crm',
+        type: 'pricing_call',
+        title: 'Commercial Negotiation with Procurement',
+        timestamp: '2026-09-28T14:00:00Z',
+        author: 'Sarah Jenkins',
+        context: 'pricing negotiation',
+        content: `Meera Sen (Procurement Director): Salesforce offered to discount Agentforce down to \$140k. Your \$195k quote is higher.
+Sarah Jenkins: When we calculate Salesforce's per-turn agent token fees at your volume, their year-1 cost reaches \$260k. We propose a Phased Milestone Ramp: \$45k for Phase 1 onboarding, scaling to \$195k on general availability.
+Meera Sen: That phased milestone ramp removes our procurement risk. We accept the phased terms.`
+      }
+    ]
   }
 ];
 
 export const SEED_OBSERVATIONS: MemoryObservation[] = [
+  {
+    id: 'obs-rajesh-kumar-stance-reversal',
+    dealId: 'deal-swiggy-delivery',
+    topic: 'Rajesh Kumar (VP Engineering) Stance & Sentiment Reversal',
+    summary: 'Rajesh Kumar underwent a complete 180-degree reversal: moving from aggressive hostility and outright refusal regarding integration complexity to becoming the deals most enthusiastic internal champion after a 45-minute zero-code Kafka proof of concept.',
+    confidence: 'Very High',
+    firstObserved: '2026-08-14',
+    lastUpdated: '2026-09-27',
+    entities: ['Rajesh Kumar', 'Swiggy Limited', 'Rohit Sen', 'Pooja Nair', 'Apache Kafka'],
+    history: [
+      {
+        date: '2026-08-14',
+        state: 'Aggressive Skeptic & Blocker',
+        evidence: 'Rajesh stated team had "zero bandwidth to rewrite our Go dispatch engine" and called vendor SDKs "6 months of engineering hell", threatening to end the meeting unless proven in 48 hours.',
+        sourceContext: 'discovery call',
+        citationId: 'int-swg-1'
+      },
+      {
+        date: '2026-08-22',
+        state: 'Total Stance Reversal & Core Sponsor',
+        evidence: 'Rajesh apologized for his skepticism, confirmed zero-code Kafka integration took only 45 minutes with zero packet loss across 20k events, and committed to championing the project as a Q3 priority.',
+        sourceContext: 'sandbox debrief',
+        citationId: 'int-swg-2'
+      },
+      {
+        date: '2026-09-27',
+        state: 'Executive Deal Accelerator',
+        evidence: 'Approved vernacular benchmark and requested fast-tracked commercial review for ₹2.40 Cr ($290k ARR).',
+        sourceContext: 'vernacular demo',
+        citationId: 'int-swg-3'
+      }
+    ]
+  },
   {
     id: 'obs-marcus-vance-sentiment',
     dealId: 'deal-cloudscale-logistics',

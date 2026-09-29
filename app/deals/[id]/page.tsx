@@ -11,6 +11,7 @@ import { DealTimeline } from '@/components/deal/DealTimeline';
 import { AskTheDealChat } from '@/components/chat/AskTheDealChat';
 import { MemoryInspector } from '@/components/inspector/MemoryInspector';
 import { CloseDealModal } from '@/components/deal/CloseDealModal';
+import { FollowUpModal } from '@/components/deal/FollowUpModal';
 import { DealRiskBadge } from '@/components/deal/DealRiskBadge';
 import {
   ArrowLeft,
@@ -25,7 +26,9 @@ import {
   Calendar,
   Layers,
   Loader2,
-  Flame
+  Flame,
+  Mail,
+  Zap
 } from 'lucide-react';
 
 export default function DealDetailPage() {
@@ -42,6 +45,7 @@ export default function DealDetailPage() {
   const [loading, setLoading] = useState(true);
   const [refreshingBrief, setRefreshingBrief] = useState(false);
   const [closeModalOpen, setCloseModalOpen] = useState(false);
+  const [followUpModalOpen, setFollowUpModalOpen] = useState(false);
   const [cmdPaletteOpen, setCmdPaletteOpen] = useState(false);
 
   useEffect(() => {
@@ -140,6 +144,22 @@ export default function DealDetailPage() {
           </Link>
 
           <div className="flex items-center space-x-2">
+            <Link
+              href={`/compare`}
+              className="px-3 py-1.5 rounded-md bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground border border-border text-xs font-medium flex items-center space-x-1.5 transition-colors"
+            >
+              <Zap className="w-3.5 h-3.5 text-sky-400" />
+              <span>Compare Memory Split-View</span>
+            </Link>
+
+            <button
+              onClick={() => setFollowUpModalOpen(true)}
+              className="px-3 py-1.5 rounded-md bg-secondary hover:bg-secondary/80 text-foreground border border-border text-xs font-medium flex items-center space-x-1.5 transition-colors"
+            >
+              <Mail className="w-3.5 h-3.5 text-sky-400" />
+              <span>Draft Follow-Up</span>
+            </button>
+
             <button
               onClick={() => setCloseModalOpen(true)}
               className="px-3 py-1.5 rounded-md bg-secondary hover:bg-secondary/80 text-foreground border border-border text-xs font-medium flex items-center space-x-1.5 transition-colors"
@@ -298,6 +318,16 @@ export default function DealDetailPage() {
         onClose={() => setCloseModalOpen(false)}
         onDealUpdated={(updated) => setDeal(updated)}
       />
+
+      {/* Follow-Up Drafter Modal */}
+      {deal && (
+        <FollowUpModal
+          dealId={deal.id}
+          dealName={deal.name}
+          isOpen={followUpModalOpen}
+          onClose={() => setFollowUpModalOpen(false)}
+        />
+      )}
 
       {/* Command Palette */}
       <CommandPalette
