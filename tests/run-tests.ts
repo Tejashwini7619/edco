@@ -60,6 +60,20 @@ async function runTests() {
   assert(tacticRes.tactics.length > 0, 'Returns concrete winning tactics');
   assert(tacticRes.supportingDeals.length >= 2, 'Cites past won and lost deals as empirical evidence');
 
+  // Test 6: Ground Truth Lock & Integrity
+  console.log('\nTest 6: Ground Truth Lock & Integrity');
+  const { verifyGroundTruthLock } = await import('../eval/lock-ground-truth');
+  const lockStatus = verifyGroundTruthLock();
+  assert(lockStatus.valid, 'Ground truth file matches locked SHA-256 hash');
+  assert(lockStatus.currentHash.length === 64, 'SHA-256 hash is valid 64-char string');
+
+  // Test 7: Knowability and Citation Validation
+  console.log('\nTest 7: Knowability & Citation Logic');
+  const { verifyCitations } = await import('../eval/judge');
+  const sampleBrief = 'Deal update: CFO capped budget at 25L [int-001-3].';
+  const citeRes = verifyCitations(sampleBrief);
+  assert(citeRes.length === 1 && citeRes[0].citation_valid, 'Correctly verifies inline citation tokens');
+
   console.log(`\n--- Test Results: ${passed} Passed, ${failed} Failed ---`);
   if (failed > 0) process.exit(1);
 }

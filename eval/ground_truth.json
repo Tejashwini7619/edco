@@ -1,0 +1,134 @@
+{
+  "deal_id": "deal-001",
+  "deal_name": "Zephyr Logistics India - Revenue & Tariff Leakage Analytics",
+  "company": "Zephyr Logistics India",
+  "total_interactions": 6,
+  "items": [
+    {
+      "id": "gt-stk-1",
+      "category": "stakeholder",
+      "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+      "first_knowable_interaction": 1,
+      "target_entity": "Karan Singhania"
+    },
+    {
+      "id": "gt-stk-2",
+      "category": "stakeholder",
+      "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+      "first_knowable_interaction": 1,
+      "target_entity": "Harish Iyer"
+    },
+    {
+      "id": "gt-obj-1",
+      "category": "objection",
+      "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+      "first_knowable_interaction": 1,
+      "target_entity": "Harish Iyer"
+    },
+    {
+      "id": "gt-chg-1",
+      "category": "change",
+      "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+      "first_knowable_interaction": 1,
+      "target_entity": "Billing Operations"
+    },
+    {
+      "id": "gt-stk-3",
+      "category": "stakeholder",
+      "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+      "first_knowable_interaction": 2,
+      "target_entity": "Ananya Sen"
+    },
+    {
+      "id": "gt-com-1",
+      "category": "commitment",
+      "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+      "first_knowable_interaction": 2,
+      "target_entity": "Arjun Mehta"
+    },
+    {
+      "id": "gt-obj-2",
+      "category": "objection",
+      "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+      "first_knowable_interaction": 2,
+      "target_entity": "Ananya Sen"
+    },
+    {
+      "id": "gt-cmp-1",
+      "category": "competitor",
+      "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+      "first_knowable_interaction": 3,
+      "target_entity": "Datawise"
+    },
+    {
+      "id": "gt-obj-3",
+      "category": "objection",
+      "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+      "first_knowable_interaction": 3,
+      "target_entity": "Harish Iyer"
+    },
+    {
+      "id": "gt-stk-4",
+      "category": "stakeholder",
+      "fact": "Deepak Verma is the CFO of BlueDart Freight Network who served as reference customer.",
+      "first_knowable_interaction": 4,
+      "target_entity": "Deepak Verma"
+    },
+    {
+      "id": "gt-tac-1",
+      "category": "tactic",
+      "fact": "BlueDart reference call demonstrated INR 1.14 Crores unbilled freight recovery and a 92-day payback period.",
+      "first_knowable_interaction": 4,
+      "target_entity": "Customer Reference"
+    },
+    {
+      "id": "gt-chg-2",
+      "category": "change",
+      "fact": "CFO Harish Iyer reversed his skeptical stance after the reference call and agreed to restructure commercials around milestone payments.",
+      "first_knowable_interaction": 4,
+      "target_entity": "Harish Iyer"
+    },
+    {
+      "id": "gt-stk-5",
+      "category": "stakeholder",
+      "fact": "Rajesh Kulkarni is the new VP of Enterprise Architecture questioning whether to build custom Apache Flink stream processing in-house.",
+      "first_knowable_interaction": 5,
+      "target_entity": "Rajesh Kulkarni"
+    },
+    {
+      "id": "gt-chg-3",
+      "category": "change",
+      "fact": "Champion Karan Singhania shifted from highly enthusiastic to hesitant and nervous regarding warehouse user adoption and shift handover friction.",
+      "first_knowable_interaction": 5,
+      "target_entity": "Karan Singhania"
+    },
+    {
+      "id": "gt-obj-4",
+      "category": "objection",
+      "fact": "CFO Harish Iyer raised a NEW concern regarding implementation vulnerability and pipeline latency stalling 2 AM dispatch batch runs.",
+      "first_knowable_interaction": 6,
+      "target_entity": "Harish Iyer"
+    },
+    {
+      "id": "gt-stk-6",
+      "category": "stakeholder",
+      "fact": "Rajesh Kulkarni mandated a sub-100ms webhook SLA and local edge caching for AWS VPC network partitions.",
+      "first_knowable_interaction": 6,
+      "target_entity": "Rajesh Kulkarni"
+    },
+    {
+      "id": "gt-tac-2",
+      "category": "tactic",
+      "fact": "Deal restructured into a milestone-contingent payment structure with 30 consecutive error-free days for Phase 2 INR 20 Lakhs tranche.",
+      "first_knowable_interaction": 6,
+      "target_entity": "Milestone Ramp"
+    },
+    {
+      "id": "gt-com-2",
+      "category": "commitment",
+      "fact": "AE promised to have legal draft the SLA addendum with specific 30-day milestone acceptance criteria by Wednesday.",
+      "first_knowable_interaction": 6,
+      "target_entity": "Arjun Mehta"
+    }
+  ]
+}

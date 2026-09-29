@@ -2,6 +2,130 @@ import { Deal, MemoryObservation, MentalModelSummary } from './types';
 
 export const SEED_DEALS: Deal[] = [
   {
+    id: 'deal-001',
+    name: 'Zephyr Logistics India - Revenue & Tariff Leakage Analytics',
+    company: 'Zephyr Logistics India',
+    industry: 'Supply Chain & Logistics',
+    stage: 'Negotiation',
+    value: 4500000,
+    owner: 'Arjun Mehta',
+    closeDate: '2026-10-30',
+    lastContactDate: '2026-06-14',
+    risk: {
+      level: 'medium',
+      score: 52,
+      reason: 'CFO Harish Iyer raised new concerns regarding pipeline latency and 2 AM dispatch batch failures; requested 30-day milestone penalty clauses.',
+      contributingFactors: [
+        'CFO initially skeptical on 4.2% margin ROI; reversed after BlueDart reference call',
+        'Champion Karan Singhania hesitant about warehouse user adoption during monsoon rush',
+        'Datawise pitched at INR 22 Lakhs with waived onboarding'
+      ],
+      lastAssessed: '2026-06-14'
+    },
+    nextStep: 'Legal drafting SLA addendum with 30-day error-free milestone criteria for Phase 2 INR 20L tranche',
+    competitors: ['Datawise'],
+    tags: ['deal:deal-001', 'industry:logistics', 'competitor:datawise'],
+    interactions: [
+      {
+        id: 'int-001-1',
+        dealId: 'deal-001',
+        type: 'discovery_call',
+        title: 'Initial Discovery with VP Operations & CFO',
+        timestamp: '2026-03-12T14:30:00Z',
+        author: 'Arjun Mehta',
+        context: 'discovery call',
+        content: `Arjun Mehta: Karan, Harish, thanks for jumping on. I know the ORR traffic in Bangalore was absolute madness today, took me an hour just to reach Indiranagar.
+Karan Singhania (VP Operations): Haha, tell me about it, Arjun. Silk Board was backed up to Koramangala. Anyway, look, our billing reconciliations across 14 hub warehouses are taking 18 days each month-end. We're running Tally for primary books, but the line haul tracking is on custom SAP ERP instances. It's a mess. I've been screaming for an automated revenue analytics layer.
+Harish Iyer (CFO): Let's hold our horses, Karan. Arjun, I'll be very blunt with you. We evaluated three SaaS reporting tools last year, and they all promised heaven and delivered unusable dashboards that my accounting team refused to open. We cannot throw 40-50 lakhs at a science experiment when freight margins are sitting at 4.2%. What makes Nimbus different from just building custom PowerBI views on top of Snowflake?
+Arjun Mehta: Fair pushback, Harish. PowerBI gives you static visual slicing, but when driver detention fees or dynamic fuel surcharges change, Nimbus catches the revenue leakage at transaction ingestion. We reconcile line-item variance in real time.
+Harish Iyer: Sounds good on paper, but I'm deeply skeptical on the implementation overhead. Karan's team is already stretched thin with the GST audit coming up in May.
+Karan Singhania: We have the bandwidth if it saves us 40 hours a week, Harish! Arjun, let's schedule a full product architecture walk-through next Tuesday.`
+      },
+      {
+        id: 'int-001-2',
+        dealId: 'deal-001',
+        type: 'demo',
+        title: 'Technical Demo & Architecture Walkthrough with Lead Data Architect',
+        timestamp: '2026-03-24T16:00:00Z',
+        author: 'Arjun Mehta',
+        context: 'technical demo',
+        content: `Karan Singhania: Hey Arjun, Sunita. Harish couldn't join today—board meeting prep—but Ananya Sen is here from our core data infra team as Lead Data Architect.
+Sunita Rao (Solutions Engineer): Fantastic. We've preloaded 50,000 synthetic multi-drop consignment records to demonstrate the Snowflake data share connector. As you can see, the reconciliation pipeline automatically flags tariff mismatches.
+Ananya Sen (Lead Data Architect): Wait, how is the schema mapper handling unbilled detention charges? In our SAP instance, those are written as debit memos with legacy ledger codes.
+Sunita Rao: Exactly through this configurable rule node here. It maps legacy memo codes directly into recognized unbilled accruals without ETL scripts.
+Karan Singhania: Wow, this is exactly what I've been asking our internal BI team to build for eight months. This would save my hub managers at least three hours every single morning. Ananya, what do you think?
+Ananya Sen: The pipeline logic is solid, but I need to see how the API rate limits hold up during month-end spikes. We process roughly 1.8 million API calls on the 30th.
+Arjun Mehta: We can guarantee 99.99% ingestion throughput with our enterprise queue. I'll send over the benchmark load test report and the SOC 2 Type II audit documentation by Friday afternoon.
+Karan Singhania: Perfect. Once Harish sees this working, he'll come around.`
+      },
+      {
+        id: 'int-001-3',
+        dealId: 'deal-001',
+        type: 'pricing_email_thread',
+        title: 'Commercial Proposal Pushback from CFO Harish Iyer',
+        timestamp: '2026-04-10T16:18:00Z',
+        author: 'Harish Iyer',
+        context: 'pricing email thread',
+        content: `From: Harish Iyer <harish.iyer@zephyrlogistics.in>
+To: Arjun Mehta <arjun.mehta@nimbusanalytics.com>
+CC: Karan Singhania <karan.s@zephyrlogistics.in>
+Date: April 10, 2026 at 4:18 PM IST
+Subject: Re: Commercial Proposal - Nimbus Analytics Enterprise Platform
+
+Arjun,
+
+I reviewed the commercial schedule you sent over. INR 45,00,000 annual recurring fee plus INR 6,50,000 onboarding services is completely out of line with our FY27 software allocation. 
+
+Given our operational volumes, I cannot justify an outlay exceeding INR 25 Lakhs all-inclusive. Furthermore, Datawise reached out to our procurement desk yesterday offering their complete analytics suite at INR 22 Lakhs with waived onboarding. Unless Nimbus can match that commercial tier, I will not approve this requisition for finance committee review next Thursday.
+
+Regards,
+Harish Iyer
+Chief Financial Officer | Zephyr Logistics India Pvt Ltd`
+      },
+      {
+        id: 'int-001-4',
+        dealId: 'deal-001',
+        type: 'exec_sponsor_call',
+        title: 'Executive Sponsor & Reference Call with BlueDart CFO',
+        timestamp: '2026-04-28T15:00:00Z',
+        author: 'Arjun Mehta',
+        context: 'exec sponsor call',
+        content: `Vikramaditya Roy: Harish, thank you for making the time. We asked Deepak Verma, CFO at BlueDart Express Freight Network, to join us for fifteen minutes to share their actual financial recovery metrics.
+Deepak Verma (CFO, BlueDart): Hi Harish. Look, when Arjun and Vikram first pitched us in 2024, I had the exact same reaction you did. We were bleeding unbilled demurrage and accessorial fuel charges. Within five months of deploying Nimbus across our 22 Western hubs, the automated audit captured INR 1.14 Crores in unbilled freight revenue that our ERP had silently dropped. The platform paid for its entire three-year contract in ninety-two days.
+Harish Iyer: Deepak, that's helpful context. But how painful was the actual integration with your legacy SAP accounting modules? My biggest fear is getting locked into a six-month consulting quagmire.
+Deepak Verma: We did the dual-run in twenty-three days. Their solutions engineering team handled the custom field parsing. It was surprisingly painless.
+Harish Iyer: I see. That changes the math substantially. If we can recoup even half that percentage across our Bhiwandi and Gurgaon freight hubs, the ROI is defensible. Arjun, let's restructure the commercial terms around a milestone payment schedule tied to tariff capture verification.`
+      },
+      {
+        id: 'int-001-5',
+        dealId: 'deal-001',
+        type: 'champion_check_in',
+        title: 'Champion Check-in with Karan Singhania - Tone Hesitation',
+        timestamp: '2026-05-18T11:30:00Z',
+        author: 'Arjun Mehta',
+        context: 'champion check-in',
+        content: `Arjun Mehta: Hey Karan, wanted to check in. Harish sounded much more aligned after the call with Deepak. How is the internal sentiment looking?
+Karan Singhania: Uh, yeah, hey Arjun. Look, honestly... things got a little complicated internally this past week. Harish is definitely on board with the revenue recovery concept now, which is great, but our CTO brought in a new VP of Enterprise Architecture, Rajesh Kulkarni. 
+Arjun Mehta: Got it. What is Rajesh's stance?
+Karan Singhania: Well, I was super gung-ho initially, but now Rajesh is questioning whether our internal engineering squad should just build an Apache Flink stream processing pipeline ourselves. And frankly, with the Q2 freight slowdown, my own operations managers are worried about having to learn a whole new UI while managing the peak monsoon logistics rush. I still want this, but I'm... I don't know, a bit nervous about whether my hub team will actually adopt it smoothly or if it'll create more friction during warehouse shift handovers.`
+      },
+      {
+        id: 'int-001-6',
+        dealId: 'deal-001',
+        type: 'security_review',
+        title: 'InfoSec Review & CFO Implementation SLA Negotiation',
+        timestamp: '2026-06-14T14:00:00Z',
+        author: 'Arjun Mehta',
+        context: 'security review',
+        content: `Harish Iyer: Arjun, Rajesh and I have spent the last fortnight reviewing our IT risk surface. While I am convinced of the financial upside, I am now extremely concerned about implementation vulnerability and data pipeline latency. If Nimbus experiences downtime or pipeline stalls during our 2 AM dispatch batch runs, 4,000 trucks sit idle at state border checkpoints.
+Rajesh Kulkarni (VP Enterprise Architecture): Precisely. We need a legally binding SLA guaranteeing sub-100 millisecond webhook delivery for e-way bill generation, plus a dedicated fallback queue if our Mumbai AWS VPC drops connection.
+Sunita Rao: We support local edge buffering via our managed Azure/AWS agent. If your VPC experiences a network partition, the agent caches up to 72 hours of transactional telemetry and automatically resumes idempotent replay once the link restores.
+Harish Iyer: That addresses the architectural risk, but I want penalty clauses tied to deployment milestones. We will not release the second tranche of INR 20 Lakhs until phase-one Bhiwandi hub cutover is running with zero data discrepancies for 30 consecutive business days.
+Arjun Mehta: We can agree to milestone-contingent invoicing for Phase 1. I will have our legal team draft the SLA addendum with the specific 30-day acceptance criteria by Wednesday.`
+      }
+    ]
+  },
+  {
     id: 'deal-acme-fintech',
     name: 'Acme Financial - Enterprise AI Orchestration',
     company: 'Acme Financial Group',

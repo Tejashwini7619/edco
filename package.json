@@ -8,7 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "seed": "tsx scripts/seed.ts",
-    "test": "tsx tests/run-tests.ts"
+    "test": "tsx tests/run-tests.ts",
+    "eval": "tsx eval/run-eval.ts",
+    "eval:quick": "tsx eval/run-eval.ts --quick",
+    "eval:draft": "tsx eval/draft-ground-truth.ts",
+    "eval:freeze": "tsx eval/lock-ground-truth.ts",
+    "eval:lock": "tsx eval/lock-ground-truth.ts",
+    "eval:sample": "tsx eval/sample-for-human.ts",
+    "eval:agreement": "tsx eval/calculate-agreement.ts"
   },
   "dependencies": {
     "@vectorize-io/hindsight-client": "^0.10.0",

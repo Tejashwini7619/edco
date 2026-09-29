@@ -1,7 +1,7 @@
 import OpenAI from 'openai';
 
 let llmClient: OpenAI | null = null;
-let activeModelName = 'openai/gpt-oss-120b';
+let activeModelName = 'qwen/qwen3.8-27b';
 
 try {
   if (typeof process !== 'undefined' && process.loadEnvFile) {
@@ -9,9 +9,7 @@ try {
   }
 } catch {}
 
-export function getLLMClient(): { client: OpenAI; model: string } {
-  if (llmClient) return { client: llmClient, model: activeModelName };
-
+export function getLLMClient(modelOverride?: string): { client: OpenAI; model: string } {
   const azureKey = process.env.AZURE_OPENAI_API_KEY;
   const azureEndpoint = process.env.AZURE_OPENAI_ENDPOINT;
   const azureApiVersion = process.env.AZURE_OPENAI_API_VERSION || '2024-08-01-preview';
@@ -20,51 +18,121 @@ export function getLLMClient(): { client: OpenAI; model: string } {
 
   // 1. Azure OpenAI (if configured)
   if (azureKey && azureEndpoint && !azureEndpoint.includes('your-resource-name')) {
-    activeModelName = process.env.AZURE_OPENAI_DEPLOYMENT_NAME || 'gpt-4o';
-    llmClient = new OpenAI({
+    const model = modelOverride || process.env.AZURE_OPENAI_DEPLOYMENT_NAME || 'gpt-4o';
+    const client = new OpenAI({
       apiKey: azureKey,
-      baseURL: `${azureEndpoint.replace(/\/$/, '')}/openai/deployments/${activeModelName}`,
+      baseURL: `${azureEndpoint.replace(/\/$/, '')}/openai/deployments/${model}`,
       defaultQuery: { 'api-version': azureApiVersion },
       defaultHeaders: { 'api-key': azureKey },
     });
-    return { client: llmClient, model: activeModelName };
+    return { client, model };
   }
 
   // 2. Groq High-Speed LLM
   if (groqKey) {
-    activeModelName = process.env.GROQ_MODEL || 'openai/gpt-oss-120b';
-    llmClient = new OpenAI({
+    const model = modelOverride || process.env.GROQ_MODEL || 'qwen/qwen3.8-27b';
+    const client = new OpenAI({
       apiKey: groqKey,
       baseURL: 'https://api.groq.com/openai/v1',
     });
-    return { client: llmClient, model: activeModelName };
+    return { client, model };
   }
 
   // 3. Direct OpenAI / Fallback
-  activeModelName = 'gpt-4o';
-  llmClient = new OpenAI({
+  const model = modelOverride || 'gpt-4o';
+  const client = new OpenAI({
     apiKey: openAiKey || 'dummy-key-for-local-fallback',
   });
 
-  return { client: llmClient, model: activeModelName };
+  return { client, model };
 }
 
-export async function generateCompletion(prompt: string, systemPrompt?: string): Promise<string> {
-  const { client, model } = getLLMClient();
+export interface CompletionOptions {
+  messages?: Array<{ role: 'system' | 'user' | 'assistant'; content: string }>;
+  prompt?: string;
+  systemPrompt?: string;
+  temperature?: number;
+  max_tokens?: number;
+  modelOverride?: string;
+}
 
-  try {
-    const response = await client.chat.completions.create({
-      model,
-      messages: [
-        ...(systemPrompt ? [{ role: 'system' as const, content: systemPrompt }] : []),
-        { role: 'user' as const, content: prompt },
-      ],
-      temperature: 0.1,
-    });
+export async function generateCompletion(
+  optionsOrPrompt: string | CompletionOptions,
+  legacySystemPrompt?: string
+): Promise<string> {
+  let messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }> = [];
+  let temperature = 0.1;
+  let maxTokens = 700;
+  let modelOverride: string | undefined;
 
-    return response.choices[0]?.message?.content || '';
-  } catch (error) {
-    console.warn('LLM completion error:', error);
+  if (typeof optionsOrPrompt === 'string') {
+    if (legacySystemPrompt) {
+      messages.push({ role: 'system', content: legacySystemPrompt });
+    }
+    messages.push({ role: 'user', content: optionsOrPrompt });
+  } else if (typeof optionsOrPrompt === 'object' && optionsOrPrompt !== null) {
+    if (optionsOrPrompt.messages && Array.isArray(optionsOrPrompt.messages)) {
+      messages = optionsOrPrompt.messages.map((m) => ({
+        role: m.role,
+        content: typeof m.content === 'string' ? m.content : JSON.stringify(m.content),
+      }));
+    } else if (optionsOrPrompt.prompt) {
+      if (optionsOrPrompt.systemPrompt) {
+        messages.push({ role: 'system', content: optionsOrPrompt.systemPrompt });
+      }
+      messages.push({ role: 'user', content: optionsOrPrompt.prompt });
+    }
+    if (optionsOrPrompt.temperature !== undefined) {
+      temperature = optionsOrPrompt.temperature;
+    }
+    if (optionsOrPrompt.max_tokens !== undefined) {
+      maxTokens = optionsOrPrompt.max_tokens;
+    }
+    modelOverride = optionsOrPrompt.modelOverride;
+  }
+
+  if (messages.length === 0) {
     return '';
   }
+
+  const { client, model } = getLLMClient(modelOverride);
+  let retries = 5;
+  let delay = 1000;
+
+  while (retries > 0) {
+    try {
+      const response = await client.chat.completions.create({
+        model,
+        messages,
+        temperature,
+        max_tokens: maxTokens,
+      });
+
+      return response.choices[0]?.message?.content || '';
+    } catch (error: any) {
+      const isRateLimit =
+        error?.status === 429 ||
+        error?.statusCode === 429 ||
+        (error?.message && error.message.includes('Rate limit'));
+
+      if (isRateLimit && retries > 1) {
+        retries--;
+        const retryMatch = error?.message?.match(/try again in ([0-9.]+)m?s/i);
+        let waitMs = delay;
+        if (retryMatch) {
+          const num = parseFloat(retryMatch[1]);
+          waitMs = error.message.includes('ms') ? Math.ceil(num) + 300 : Math.ceil(num * 1000) + 300;
+        }
+        console.warn(`[LLM 429] Rate limit hit. Backing off for ${waitMs}ms before retry (${retries} retries left)...`);
+        await new Promise((resolve) => setTimeout(resolve, Math.max(waitMs, 1500)));
+        delay = Math.min(delay * 1.5, 8000);
+        continue;
+      }
+
+      console.warn('[LLM Error]:', error?.message || error);
+      return '';
+    }
+  }
+
+  return '';
 }

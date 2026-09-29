@@ -1,0 +1,1148 @@
+{
+  "deals": [
+    {
+      "id": "deal-001",
+      "name": "Zephyr Logistics India - Revenue & Tariff Leakage Analytics",
+      "company": "Zephyr Logistics India",
+      "industry": "Supply Chain & Logistics",
+      "stage": "Negotiation",
+      "value": 4500000,
+      "owner": "Arjun Mehta",
+      "closeDate": "2026-10-30",
+      "lastContactDate": "2026-06-14",
+      "risk": {
+        "level": "medium",
+        "score": 52,
+        "reason": "CFO Harish Iyer raised new concerns regarding pipeline latency and 2 AM dispatch batch failures; requested 30-day milestone penalty clauses.",
+        "contributingFactors": [
+          "CFO initially skeptical on 4.2% margin ROI; reversed after BlueDart reference call",
+          "Champion Karan Singhania hesitant about warehouse user adoption during monsoon rush",
+          "Datawise pitched at INR 22 Lakhs with waived onboarding"
+        ],
+        "lastAssessed": "2026-06-14"
+      },
+      "nextStep": "Legal drafting SLA addendum with 30-day error-free milestone criteria for Phase 2 INR 20L tranche",
+      "competitors": [
+        "Datawise"
+      ],
+      "tags": [
+        "deal:deal-001",
+        "industry:logistics",
+        "competitor:datawise"
+      ],
+      "interactions": [
+        {
+          "id": "int-001-1",
+          "dealId": "deal-001",
+          "type": "discovery_call",
+          "title": "Initial Discovery with VP Operations & CFO",
+          "timestamp": "2026-03-12T14:30:00Z",
+          "author": "Arjun Mehta",
+          "context": "discovery call",
+          "content": "Arjun Mehta: Karan, Harish, thanks for jumping on. I know the ORR traffic in Bangalore was absolute madness today, took me an hour just to reach Indiranagar.\nKaran Singhania (VP Operations): Haha, tell me about it, Arjun. Silk Board was backed up to Koramangala. Anyway, look, our billing reconciliations across 14 hub warehouses are taking 18 days each month-end. We're running Tally for primary books, but the line haul tracking is on custom SAP ERP instances. It's a mess. I've been screaming for an automated revenue analytics layer.\nHarish Iyer (CFO): Let's hold our horses, Karan. Arjun, I'll be very blunt with you. We evaluated three SaaS reporting tools last year, and they all promised heaven and delivered unusable dashboards that my accounting team refused to open. We cannot throw 40-50 lakhs at a science experiment when freight margins are sitting at 4.2%. What makes Nimbus different from just building custom PowerBI views on top of Snowflake?\nArjun Mehta: Fair pushback, Harish. PowerBI gives you static visual slicing, but when driver detention fees or dynamic fuel surcharges change, Nimbus catches the revenue leakage at transaction ingestion. We reconcile line-item variance in real time.\nHarish Iyer: Sounds good on paper, but I'm deeply skeptical on the implementation overhead. Karan's team is already stretched thin with the GST audit coming up in May.\nKaran Singhania: We have the bandwidth if it saves us 40 hours a week, Harish! Arjun, let's schedule a full product architecture walk-through next Tuesday."
+        },
+        {
+          "id": "int-001-2",
+          "dealId": "deal-001",
+          "type": "demo",
+          "title": "Technical Demo & Architecture Walkthrough with Lead Data Architect",
+          "timestamp": "2026-03-24T16:00:00Z",
+          "author": "Arjun Mehta",
+          "context": "technical demo",
+          "content": "Karan Singhania: Hey Arjun, Sunita. Harish couldn't join today—board meeting prep—but Ananya Sen is here from our core data infra team as Lead Data Architect.\nSunita Rao (Solutions Engineer): Fantastic. We've preloaded 50,000 synthetic multi-drop consignment records to demonstrate the Snowflake data share connector. As you can see, the reconciliation pipeline automatically flags tariff mismatches.\nAnanya Sen (Lead Data Architect): Wait, how is the schema mapper handling unbilled detention charges? In our SAP instance, those are written as debit memos with legacy ledger codes.\nSunita Rao: Exactly through this configurable rule node here. It maps legacy memo codes directly into recognized unbilled accruals without ETL scripts.\nKaran Singhania: Wow, this is exactly what I've been asking our internal BI team to build for eight months. This would save my hub managers at least three hours every single morning. Ananya, what do you think?\nAnanya Sen: The pipeline logic is solid, but I need to see how the API rate limits hold up during month-end spikes. We process roughly 1.8 million API calls on the 30th.\nArjun Mehta: We can guarantee 99.99% ingestion throughput with our enterprise queue. I'll send over the benchmark load test report and the SOC 2 Type II audit documentation by Friday afternoon.\nKaran Singhania: Perfect. Once Harish sees this working, he'll come around."
+        },
+        {
+          "id": "int-001-3",
+          "dealId": "deal-001",
+          "type": "pricing_email_thread",
+          "title": "Commercial Proposal Pushback from CFO Harish Iyer",
+          "timestamp": "2026-04-10T16:18:00Z",
+          "author": "Harish Iyer",
+          "context": "pricing email thread",
+          "content": "From: Harish Iyer <harish.iyer@zephyrlogistics.in>\nTo: Arjun Mehta <arjun.mehta@nimbusanalytics.com>\nCC: Karan Singhania <karan.s@zephyrlogistics.in>\nDate: April 10, 2026 at 4:18 PM IST\nSubject: Re: Commercial Proposal - Nimbus Analytics Enterprise Platform\n\nArjun,\n\nI reviewed the commercial schedule you sent over. INR 45,00,000 annual recurring fee plus INR 6,50,000 onboarding services is completely out of line with our FY27 software allocation. \n\nGiven our operational volumes, I cannot justify an outlay exceeding INR 25 Lakhs all-inclusive. Furthermore, Datawise reached out to our procurement desk yesterday offering their complete analytics suite at INR 22 Lakhs with waived onboarding. Unless Nimbus can match that commercial tier, I will not approve this requisition for finance committee review next Thursday.\n\nRegards,\nHarish Iyer\nChief Financial Officer | Zephyr Logistics India Pvt Ltd"
+        },
+        {
+          "id": "int-001-4",
+          "dealId": "deal-001",
+          "type": "exec_sponsor_call",
+          "title": "Executive Sponsor & Reference Call with BlueDart CFO",
+          "timestamp": "2026-04-28T15:00:00Z",
+          "author": "Arjun Mehta",
+          "context": "exec sponsor call",
+          "content": "Vikramaditya Roy: Harish, thank you for making the time. We asked Deepak Verma, CFO at BlueDart Express Freight Network, to join us for fifteen minutes to share their actual financial recovery metrics.\nDeepak Verma (CFO, BlueDart): Hi Harish. Look, when Arjun and Vikram first pitched us in 2024, I had the exact same reaction you did. We were bleeding unbilled demurrage and accessorial fuel charges. Within five months of deploying Nimbus across our 22 Western hubs, the automated audit captured INR 1.14 Crores in unbilled freight revenue that our ERP had silently dropped. The platform paid for its entire three-year contract in ninety-two days.\nHarish Iyer: Deepak, that's helpful context. But how painful was the actual integration with your legacy SAP accounting modules? My biggest fear is getting locked into a six-month consulting quagmire.\nDeepak Verma: We did the dual-run in twenty-three days. Their solutions engineering team handled the custom field parsing. It was surprisingly painless.\nHarish Iyer: I see. That changes the math substantially. If we can recoup even half that percentage across our Bhiwandi and Gurgaon freight hubs, the ROI is defensible. Arjun, let's restructure the commercial terms around a milestone payment schedule tied to tariff capture verification."
+        },
+        {
+          "id": "int-001-5",
+          "dealId": "deal-001",
+          "type": "champion_check_in",
+          "title": "Champion Check-in with Karan Singhania - Tone Hesitation",
+          "timestamp": "2026-05-18T11:30:00Z",
+          "author": "Arjun Mehta",
+          "context": "champion check-in",
+          "content": "Arjun Mehta: Hey Karan, wanted to check in. Harish sounded much more aligned after the call with Deepak. How is the internal sentiment looking?\nKaran Singhania: Uh, yeah, hey Arjun. Look, honestly... things got a little complicated internally this past week. Harish is definitely on board with the revenue recovery concept now, which is great, but our CTO brought in a new VP of Enterprise Architecture, Rajesh Kulkarni. \nArjun Mehta: Got it. What is Rajesh's stance?\nKaran Singhania: Well, I was super gung-ho initially, but now Rajesh is questioning whether our internal engineering squad should just build an Apache Flink stream processing pipeline ourselves. And frankly, with the Q2 freight slowdown, my own operations managers are worried about having to learn a whole new UI while managing the peak monsoon logistics rush. I still want this, but I'm... I don't know, a bit nervous about whether my hub team will actually adopt it smoothly or if it'll create more friction during warehouse shift handovers."
+        },
+        {
+          "id": "int-001-6",
+          "dealId": "deal-001",
+          "type": "security_review",
+          "title": "InfoSec Review & CFO Implementation SLA Negotiation",
+          "timestamp": "2026-06-14T14:00:00Z",
+          "author": "Arjun Mehta",
+          "context": "security review",
+          "content": "Harish Iyer: Arjun, Rajesh and I have spent the last fortnight reviewing our IT risk surface. While I am convinced of the financial upside, I am now extremely concerned about implementation vulnerability and data pipeline latency. If Nimbus experiences downtime or pipeline stalls during our 2 AM dispatch batch runs, 4,000 trucks sit idle at state border checkpoints.\nRajesh Kulkarni (VP Enterprise Architecture): Precisely. We need a legally binding SLA guaranteeing sub-100 millisecond webhook delivery for e-way bill generation, plus a dedicated fallback queue if our Mumbai AWS VPC drops connection.\nSunita Rao: We support local edge buffering via our managed Azure/AWS agent. If your VPC experiences a network partition, the agent caches up to 72 hours of transactional telemetry and automatically resumes idempotent replay once the link restores.\nHarish Iyer: That addresses the architectural risk, but I want penalty clauses tied to deployment milestones. We will not release the second tranche of INR 20 Lakhs until phase-one Bhiwandi hub cutover is running with zero data discrepancies for 30 consecutive business days.\nArjun Mehta: We can agree to milestone-contingent invoicing for Phase 1. I will have our legal team draft the SLA addendum with the specific 30-day acceptance criteria by Wednesday."
+        }
+      ]
+    },
+    {
+      "id": "deal-acme-fintech",
+      "name": "Acme Financial - Enterprise AI Orchestration",
+      "company": "Acme Financial Group",
+      "industry": "Financial Services",
+      "stage": "Negotiation",
+      "value": 280000,
+      "owner": "Sarah Jenkins",
+      "closeDate": "2026-10-15",
+      "lastContactDate": "2026-09-24",
+      "risk": {
+        "level": "medium",
+        "score": 48,
+        "reason": "CFO pushed back on $280k multi-year commit; competitor ApexCloud offering 30% bundle discount",
+        "contributingFactors": [
+          "CFO Evelyn Vance requested 20% discount or phased roll-out",
+          "ApexCloud Enterprise mentioned 4 days ago in email",
+          "Security sign-off obtained but legal review pending"
+        ],
+        "lastAssessed": "2026-09-24"
+      },
+      "nextStep": "Present Phased Pilot Milestone proposal and ApexCloud TCO comparison to CFO Evelyn Vance on Thursday",
+      "competitors": [
+        "ApexCloud Enterprise"
+      ],
+      "tags": [
+        "deal:deal-acme-fintech",
+        "industry:fintech",
+        "tier:enterprise",
+        "competitor:apexcloud"
+      ],
+      "interactions": [
+        {
+          "id": "int-acme-1",
+          "dealId": "deal-acme-fintech",
+          "type": "discovery_call",
+          "title": "Initial Discovery with VP of Engineering & Head of AI",
+          "timestamp": "2026-08-02T14:30:00Z",
+          "author": "Sarah Jenkins",
+          "context": "discovery call",
+          "content": "Sarah Jenkins (2026-08-02T14:30:00Z): Thanks for meeting, David and Priya. What triggered your search for an orchestration platform?\nDavid Zhao (VP Engineering): Our existing microservices are sprawling. We have 14 separate LLM pipelines running on bespoke Python services. Maintaining observability and token routing is costing us 40 hours of DevOps every week.\nPriya Nair (Head of AI): We tested ApexCloud Enterprise last quarter. Their API was too rigid and locked us into their proprietary embeddings. We need an open architecture with hybrid Azure/on-premise deployment.\nSarah Jenkins: SynapseFlow provides full Azure tenant isolation and zero-data retention. What timeline are you targeting?\nDavid Zhao: We want to migrate our fraud detection pipeline by Q4. Budget is roughly $250k - $300k ARR if security clears it."
+        },
+        {
+          "id": "int-acme-2",
+          "dealId": "deal-acme-fintech",
+          "type": "demo",
+          "title": "Technical Deep-Dive & Architecture Walkthrough",
+          "timestamp": "2026-08-16T16:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "technical demo",
+          "content": "Sarah Jenkins (2026-08-16T16:00:00Z): Demonstrating the SynapseFlow distributed state machine and Azure OpenAI integration.\nDavid Zhao: The sub-50ms token routing latency is impressive. How does fallback handling work if the primary Azure OpenAI endpoint times out?\nMarkus (Solutions Architect): We support multi-region automatic failover with zero loss of execution context.\nPriya Nair: Our fraud models process 1.2M queries daily. What is the throughput cap?\nMarkus: We benchmarked 15,000 requests/sec with dedicated provisioned throughput on Azure.\nDavid Zhao: This solves our core latency bottleneck. Let's schedule the security review with Evelyn's compliance team next week."
+        },
+        {
+          "id": "int-acme-3",
+          "dealId": "deal-acme-fintech",
+          "type": "security_review",
+          "title": "InfoSec & Compliance Audit with Chief Risk Officer",
+          "timestamp": "2026-08-28T10:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "security review",
+          "content": "Sarah Jenkins (2026-08-28T10:00:00Z): Meeting with Helena Cross (Chief Risk Officer) and David Zhao.\nHelena Cross: In financial services, we cannot have customer transaction metadata stored in external SaaS databases. How is PII handled?\nMarkus (Solutions Architect): SynapseFlow runs within your Azure Virtual Network (VNet). All memory and state tokens are encrypted with your Customer-Managed Keys (CMK). We retain zero raw financial PII.\nHelena Cross: Do you have a completed SOC 2 Type II report and ISO 27001 certification?\nSarah Jenkins: Yes, provided via our Trust Portal. We also support FedRAMP Moderate compliance controls.\nHelena Cross: Security requirement is met. I will submit green-light approval to Legal."
+        },
+        {
+          "id": "int-acme-4",
+          "dealId": "deal-acme-fintech",
+          "type": "pricing_call",
+          "title": "Commercial Proposal & Pricing Negotiation with CFO",
+          "timestamp": "2026-09-12T15:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "pricing negotiation",
+          "content": "Sarah Jenkins (2026-09-12T15:00:00Z): Presented 3-year Enterprise proposal at $280,000 ARR including 24/7 SLA and Solutions Architect support.\nEvelyn Vance (CFO): $280k is above our initial $220k cap for this budget cycle. ApexCloud came back with an aggressive bundle proposal offering their orchestration add-on for $195k if we renew their core data lake.\nDavid Zhao: But ApexCloud's throughput failed our stress test, and their security model requires external telemetry.\nEvelyn Vance: I acknowledge the technical superiority, but I cannot approve $280k upfront without either a phased milestone ramp or substantial discount. If you can do $240k or provide phased payments tied to migration milestones, we can sign by end of month."
+        },
+        {
+          "id": "int-acme-5",
+          "dealId": "deal-acme-fintech",
+          "type": "email_thread",
+          "title": "Competitor ApexCloud FUD Push & TCO Analysis Follow-up",
+          "timestamp": "2026-09-24T09:15:00Z",
+          "author": "Sarah Jenkins",
+          "context": "email follow-up",
+          "content": "From: Sarah Jenkins <sarah.jenkins@synapseflow.ai>\nTo: Evelyn Vance <evelyn.vance@acmefin.com>, David Zhao <david.zhao@acmefin.com>\nSubject: Re: Commercials & ApexCloud Architecture Comparison\n\nHi Evelyn & David,\nFollowing our discussion, I broke down the Total Cost of Ownership (TCO). While ApexCloud's baseline license is $195k, their egress fees and required proprietary embeddings add an estimated $85k/year based on your 1.2M daily transaction volume, making true cost $280k+.\nWe propose structuring the agreement into a Phased Implementation Ramp: $60k for Q4 during the fraud pipeline migration, stepping up to the full $280k ARR upon full production cutover.\nDavid Zhao: This phased structure eliminates our implementation risk. Evelyn, can we review this on Thursday's sync?"
+        }
+      ]
+    },
+    {
+      "id": "deal-cloudscale-logistics",
+      "name": "CloudScale Logistics - Fleet Automation Suite",
+      "company": "CloudScale Logistics Inc",
+      "industry": "Supply Chain & Logistics",
+      "stage": "Security Review",
+      "value": 340000,
+      "owner": "Michael Chang",
+      "closeDate": "2026-11-01",
+      "lastContactDate": "2026-09-20",
+      "risk": {
+        "level": "high",
+        "score": 74,
+        "reason": "Champion Marcus Vance changed sentiment from highly enthusiastic to silent blocker after internal audit",
+        "contributingFactors": [
+          "CTO Marcus Vance went unresponsive for 18 days",
+          "VP Operations expressed concern over driver route data privacy",
+          "Competitor NimbleStack Pro attempting end-run around IT"
+        ],
+        "lastAssessed": "2026-09-20"
+      },
+      "nextStep": "Executive alignment call with CIO Teresa Wong to unblock security audit concerns",
+      "competitors": [
+        "NimbleStack Pro",
+        "ApexCloud Enterprise"
+      ],
+      "tags": [
+        "deal:deal-cloudscale-logistics",
+        "industry:logistics",
+        "risk:champion-shift"
+      ],
+      "interactions": [
+        {
+          "id": "int-cs-1",
+          "dealId": "deal-cloudscale-logistics",
+          "type": "discovery_call",
+          "title": "Executive Discovery with CTO Marcus Vance",
+          "timestamp": "2026-07-10T11:00:00Z",
+          "author": "Michael Chang",
+          "context": "discovery call",
+          "content": "Michael Chang (2026-07-10T11:00:00Z): Marcus, what is your top priority for the supply chain routing system?\nMarcus Vance (CTO): We manage 8,500 delivery trucks across North America. Our legacy dispatch algorithm is rigid. We want real-time agentic re-routing based on weather, traffic, and dock wait times.\nMichael Chang: SynapseFlow's event-driven agent mesh was built specifically for high-throughput streaming state.\nMarcus Vance: I love this architecture. If you can integrate with our Trimble telematics API, this is a no-brainer. I will champion this directly to our CEO."
+        },
+        {
+          "id": "int-cs-2",
+          "dealId": "deal-cloudscale-logistics",
+          "type": "demo",
+          "title": "Live Telematics Simulator & Route Optimization Demo",
+          "timestamp": "2026-07-25T15:00:00Z",
+          "author": "Michael Chang",
+          "context": "product demo",
+          "content": "Marcus Vance (CTO): The live dispatch demo blew our operations team away. Saved 14% on simulated fuel costs.\nMichael Chang: We are ready to draft the 500-vehicle pilot agreement at $340,000 enterprise scale.\nMarcus Vance: Send over the paperwork. I will push Legal and IT security to fast-track this for an August kickoff."
+        },
+        {
+          "id": "int-cs-3",
+          "dealId": "deal-cloudscale-logistics",
+          "type": "crm_note",
+          "title": "Internal Shift: Champion Goes Quiet After Board Meeting",
+          "timestamp": "2026-08-18T17:30:00Z",
+          "author": "Michael Chang",
+          "context": "crm note",
+          "content": "Marcus Vance has missed two scheduled weekly syncs. Left voicemail. Reached out to his Senior Director of Infrastructure who mentioned the board mandated a cost-freeze on non-essential IT following Q2 margin compression. Marcus seems under heavy pressure and has stopped responding to emails."
+        },
+        {
+          "id": "int-cs-4",
+          "dealId": "deal-cloudscale-logistics",
+          "type": "security_review",
+          "title": "Tense Security Review with InfoSec Director Raymond Cole",
+          "timestamp": "2026-09-10T14:00:00Z",
+          "author": "Michael Chang",
+          "context": "security review",
+          "content": "Raymond Cole (InfoSec Director): Marcus Vance forwarded your compliance deck, but we have severe reservations. Truck GPS feeds constitute sensitive physical security telemetry. We cannot allow cloud streaming unless you deploy into our private Azure sovereign enclave.\nMarcus Vance (CTO): (Noticeably withdrawn) Yes, Raymond has raised critical audit points. We cannot move forward under the current SaaS tenant model.\nMichael Chang: We support Azure Private Link and Customer-Managed Enclaves. We can do a fully isolated zero-egress deployment.\nRaymond Cole: Send the architectural whitepaper. We will evaluate internally."
+        },
+        {
+          "id": "int-cs-5",
+          "dealId": "deal-cloudscale-logistics",
+          "type": "executive_sync",
+          "title": "Check-in with VP of Operations",
+          "timestamp": "2026-09-20T10:30:00Z",
+          "author": "Michael Chang",
+          "context": "executive sync",
+          "content": "Met with VP Operations Karen Bell. She confirmed Marcus Vance is hesitant to take any career risks before his annual review in November. She suggested engaging CIO Teresa Wong directly with the fuel savings ROI calculations ($1.8M projected annual savings) to provide top-down coverage for Marcus."
+        }
+      ]
+    },
+    {
+      "id": "deal-novamed-health",
+      "name": "NovaMed Health - Clinical Workflow Intelligence",
+      "company": "NovaMed Health Systems",
+      "industry": "Healthcare",
+      "stage": "Closed Won",
+      "value": 420000,
+      "owner": "Elena Rostova",
+      "closeDate": "2026-09-05",
+      "lastContactDate": "2026-09-05",
+      "risk": {
+        "level": "low",
+        "score": 12,
+        "reason": "Deal closed won; HIPAA BAA signed with multi-year commitment",
+        "contributingFactors": [
+          "Signed 3-year agreement",
+          "Dedicated Solution Architect assigned"
+        ],
+        "lastAssessed": "2026-09-05"
+      },
+      "nextStep": "Kick off implementation onboarding with Chief Medical Officer on Oct 1",
+      "competitors": [
+        "ApexCloud Enterprise"
+      ],
+      "tags": [
+        "deal:deal-novamed-health",
+        "industry:healthcare",
+        "outcome:won",
+        "competitor:apexcloud"
+      ],
+      "outcome": {
+        "status": "won",
+        "closedAt": "2026-09-05",
+        "primaryReason": "Superior HIPAA compliance, zero-data retention architecture, and Open-Standards FHIR export",
+        "winningOrLosingTactics": "Provided signed BAA pre-template, executed a 2-week HIPAA sandbox with mock EHR data, and highlighted ApexCloud proprietary lock-in risk."
+      },
+      "interactions": [
+        {
+          "id": "int-nova-1",
+          "dealId": "deal-novamed-health",
+          "type": "discovery_call",
+          "title": "Clinical Workflow Discovery with CMIO Dr. Aris Thorne",
+          "timestamp": "2026-06-15T13:00:00Z",
+          "author": "Elena Rostova",
+          "context": "discovery call",
+          "content": "Dr. Aris Thorne (Chief Medical Information Officer): Our physicians spend 3.5 hours every evening charting in Epic EHR. We need an intelligent agent that parses patient discharge summaries and pre-fills clinical coding.\nElena Rostova: HIPAA compliance and zero data leakage are paramount.\nDr. Thorne: Exactly. ApexCloud approached us, but their Terms of Service allowed aggregated de-identified telemetry training. That is an absolute dealbreaker for our Institutional Review Board (IRB)."
+        },
+        {
+          "id": "int-nova-2",
+          "dealId": "deal-novamed-health",
+          "type": "security_review",
+          "title": "HIPAA & BAA Legal Review with Chief Legal Counsel",
+          "timestamp": "2026-07-12T10:00:00Z",
+          "author": "Elena Rostova",
+          "context": "compliance review",
+          "content": "Reviewed our standard Business Associate Agreement (BAA) and Azure Confidential Computing enclave architecture.\nLegal Counsel Janet Brody: Your zero-retention policy and verifiable encryption in-use satisfy our strictest PHI guidelines. ApexCloud refused to sign our custom indemnification clause; SynapseFlow's standard enterprise terms are significantly more healthcare-friendly."
+        },
+        {
+          "id": "int-nova-3",
+          "dealId": "deal-novamed-health",
+          "type": "pricing_call",
+          "title": "Pricing & TCO Review against ApexCloud",
+          "timestamp": "2026-08-10T14:30:00Z",
+          "author": "Elena Rostova",
+          "context": "pricing negotiation",
+          "content": "Presented $420k ARR 3-year contract covering 12 hospital campuses.\nDr. Thorne: ApexCloud offered a lower baseline license ($310k), but your FHIR native adapters will save us at least $180k in custom middleware engineering. We will proceed with SynapseFlow."
+        },
+        {
+          "id": "int-nova-4",
+          "dealId": "deal-novamed-health",
+          "type": "crm_note",
+          "title": "Contract Execution & Closed Won",
+          "timestamp": "2026-09-05T16:00:00Z",
+          "author": "Elena Rostova",
+          "context": "deal closed",
+          "content": "Contract signed for $420,000 ARR with 3-year commitment ($1.26M TCV). Winning playbook: Zero-retention HIPAA proof points + FHIR connector vs ApexCloud proprietary lock-in."
+        }
+      ]
+    },
+    {
+      "id": "deal-vertex-cyber",
+      "name": "Vertex Security - Threat Intelligence Co-Pilot",
+      "company": "Vertex Cyber Systems",
+      "industry": "Cybersecurity",
+      "stage": "Closed Won",
+      "value": 310000,
+      "owner": "Sarah Jenkins",
+      "closeDate": "2026-08-20",
+      "lastContactDate": "2026-08-20",
+      "risk": {
+        "level": "low",
+        "score": 10,
+        "reason": "Deal closed won; production deployment underway",
+        "contributingFactors": [
+          "Signed agreement",
+          "Phased rollout verified"
+        ],
+        "lastAssessed": "2026-08-20"
+      },
+      "nextStep": "Quarterly business review scheduled for Q4",
+      "competitors": [
+        "NimbleStack Pro"
+      ],
+      "tags": [
+        "deal:deal-vertex-cyber",
+        "industry:cybersecurity",
+        "outcome:won",
+        "competitor:nimblestack"
+      ],
+      "outcome": {
+        "status": "won",
+        "closedAt": "2026-08-20",
+        "primaryReason": "Enterprise RBAC, SOC2 compliance, and sub-50ms latency vs NimbleStack feature gaps",
+        "winningOrLosingTactics": "Conducted live SOC stress-test benchmarking throughput under 50k events/sec and demonstrated NimbleStack lack of granular team-level RBAC."
+      },
+      "interactions": [
+        {
+          "id": "int-vtx-1",
+          "dealId": "deal-vertex-cyber",
+          "type": "discovery_call",
+          "title": "Threat Intel Pipeline Discovery",
+          "timestamp": "2026-06-01T15:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "discovery call",
+          "content": "CISO Gregory Hall: We ingest 200M telemetry logs per day. Our analysts need automated alert triaging.\nSarah Jenkins: NimbleStack Pro was mentioned earlier—how are you evaluating them?\nGregory Hall: NimbleStack is cheap ($120k), but their security model lacks role-based access control (RBAC) and audit trails for multi-tenant customer data."
+        },
+        {
+          "id": "int-vtx-2",
+          "dealId": "deal-vertex-cyber",
+          "type": "demo",
+          "title": "High-Throughput Threat Evaluation Benchmark",
+          "timestamp": "2026-07-08T11:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "technical benchmark",
+          "content": "Ran synthetic stress-test with 50,000 events/sec. SynapseFlow sustained sub-40ms P99 latency with zero dropped frames.\nGregory Hall: NimbleStack choked at 12,000 events/sec during our pilot. Your enterprise architecture clearly scales."
+        },
+        {
+          "id": "int-vtx-3",
+          "dealId": "deal-vertex-cyber",
+          "type": "pricing_call",
+          "title": "Commercial Agreement Finalization",
+          "timestamp": "2026-08-15T16:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "pricing call",
+          "content": "Agreed on $310,000 ARR. Gregory Hall affirmed that paying a premium over NimbleStack was justified by the audit compliance and enterprise support."
+        },
+        {
+          "id": "int-vtx-4",
+          "dealId": "deal-vertex-cyber",
+          "type": "crm_note",
+          "title": "Closed Won Confirmation",
+          "timestamp": "2026-08-20T17:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "deal closed",
+          "content": "Closed Won $310k ARR. Key winning tactic: Side-by-side throughput benchmark + enterprise RBAC comparison vs NimbleStack Pro."
+        }
+      ]
+    },
+    {
+      "id": "deal-strata-retail",
+      "name": "Strata Commerce - Omnichannel Personalization",
+      "company": "Strata Retail Global",
+      "industry": "Retail & E-commerce",
+      "stage": "Closed Lost",
+      "value": 260000,
+      "owner": "Michael Chang",
+      "closeDate": "2026-07-30",
+      "lastContactDate": "2026-07-30",
+      "risk": {
+        "level": "critical",
+        "score": 95,
+        "reason": "Deal closed lost to ApexCloud bundle discount due to lack of phased payment structure",
+        "contributingFactors": [
+          "ApexCloud 40% suite discount",
+          "Rep insisted on upfront annual payment without milestone pilot"
+        ],
+        "lastAssessed": "2026-07-30"
+      },
+      "nextStep": "Nurture for Q2 2027 contract renewal cycle",
+      "competitors": [
+        "ApexCloud Enterprise"
+      ],
+      "tags": [
+        "deal:deal-strata-retail",
+        "industry:retail",
+        "outcome:lost",
+        "competitor:apexcloud"
+      ],
+      "outcome": {
+        "status": "lost",
+        "closedAt": "2026-07-30",
+        "primaryReason": "CFO accepted ApexCloud 40% enterprise bundle discount when rep refused phased migration terms",
+        "winningOrLosingTactics": "Rep pushed hard for full $260k upfront commit rather than offering a phased migration pilot. ApexCloud bundled their inferior tool for $140k."
+      },
+      "interactions": [
+        {
+          "id": "int-strata-1",
+          "dealId": "deal-strata-retail",
+          "type": "discovery_call",
+          "title": "Personalization Engine Discovery",
+          "timestamp": "2026-05-10T14:00:00Z",
+          "author": "Michael Chang",
+          "context": "discovery call",
+          "content": "VP E-commerce Liam Thorne: We need real-time cart recommendations across 40M monthly web visitors.\nMichael Chang: SynapseFlow provides sub-30ms inference caching.\nLiam Thorne: Our current ApexCloud contract is up for renewal. We are open to switching if the price is right."
+        },
+        {
+          "id": "int-strata-2",
+          "dealId": "deal-strata-retail",
+          "type": "pricing_call",
+          "title": "Pricing Pushback & Unyielding Term Negotiations",
+          "timestamp": "2026-06-20T15:30:00Z",
+          "author": "Michael Chang",
+          "context": "pricing negotiation",
+          "content": "CFO Samantha Wright: We need a phased pilot or quarterly billing because of engineering resource constraints during Q3.\nMichael Chang: Our company policy requires annual upfront payment for Tier-1 enterprise tier ($260,000).\nSamantha Wright: ApexCloud offered to bundle their module into our ERP license for $140k with deferred billing."
+        },
+        {
+          "id": "int-strata-3",
+          "dealId": "deal-strata-retail",
+          "type": "crm_note",
+          "title": "Deal Lost to ApexCloud Bundle",
+          "timestamp": "2026-07-30T11:00:00Z",
+          "author": "Michael Chang",
+          "context": "deal closed",
+          "content": "Closed Lost. Samantha Wright signed ApexCloud bundle. Lesson learned: Inflexible upfront payment terms against an incumbent bundle guarantee a loss. Must offer phased milestone ramps."
+        }
+      ]
+    },
+    {
+      "id": "deal-quantum-telco",
+      "name": "Quantum Telecom - Network Ops Automation",
+      "company": "Quantum Telecom Corp",
+      "industry": "Telecommunications",
+      "stage": "Discovery",
+      "value": 510000,
+      "owner": "Sarah Jenkins",
+      "closeDate": "2026-12-15",
+      "lastContactDate": "2026-09-22",
+      "risk": {
+        "level": "medium",
+        "score": 42,
+        "reason": "Massive scale (18M subscribers); incumbent ApexCloud entrenched in billing system",
+        "contributingFactors": [
+          "High integration complexity",
+          "Multiple VP stakeholders involved"
+        ],
+        "lastAssessed": "2026-09-22"
+      },
+      "nextStep": "Coordinate multi-region latency benchmark demo with Network Engineering team",
+      "competitors": [
+        "ApexCloud Enterprise"
+      ],
+      "tags": [
+        "deal:deal-quantum-telco",
+        "industry:telecom",
+        "tier:strategic"
+      ],
+      "interactions": [
+        {
+          "id": "int-qt-1",
+          "dealId": "deal-quantum-telco",
+          "type": "discovery_call",
+          "title": "Strategic Ops Discovery with VP Network Reliability",
+          "timestamp": "2026-09-08T10:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "discovery call",
+          "content": "VP Network Reliability Carlos Mendez: Cell tower outages cost us $120k/minute in regulatory fines. We need an autonomous remediation agent.\nSarah Jenkins: SynapseFlow orchestrates complex multi-step diagnostics with automated rollback.\nCarlos Mendez: ApexCloud has been our core vendor for 6 years, but their platform lacks event-driven graph reasoning. We want to test SynapseFlow in our Pacific Northwest testbed."
+        },
+        {
+          "id": "int-qt-2",
+          "dealId": "deal-quantum-telco",
+          "type": "email_thread",
+          "title": "Technical Requirements & Sandbox Setup",
+          "timestamp": "2026-09-22T16:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "technical scoping",
+          "content": "Carlos Mendez confirmed security specifications: Requires Azure GovCloud compliance and 99.999% SLA uptime. Sarah shared the FedRAMP architectural blueprint."
+        }
+      ]
+    },
+    {
+      "id": "deal-apex-biotech",
+      "name": "Apex BioLabs - Genomic Data Pipeline Agent",
+      "company": "Apex BioLabs International",
+      "industry": "Biotechnology",
+      "stage": "Solutioning",
+      "value": 390000,
+      "owner": "Elena Rostova",
+      "closeDate": "2026-11-20",
+      "lastContactDate": "2026-09-25",
+      "risk": {
+        "level": "low",
+        "score": 22,
+        "reason": "High technical engagement; champion is head of computational biology with direct budget",
+        "contributingFactors": [
+          "Strong champion sponsorship",
+          "Clean security audit path"
+        ],
+        "lastAssessed": "2026-09-25"
+      },
+      "nextStep": "Present customized Genomic Pipeline POC results to scientific advisory board",
+      "competitors": [
+        "NimbleStack Pro"
+      ],
+      "tags": [
+        "deal:deal-apex-biotech",
+        "industry:biotech",
+        "tier:enterprise"
+      ],
+      "interactions": [
+        {
+          "id": "int-ab-1",
+          "dealId": "deal-apex-biotech",
+          "type": "discovery_call",
+          "title": "Genomics Pipeline Discovery with Dr. Lin Chen",
+          "timestamp": "2026-08-14T13:00:00Z",
+          "author": "Elena Rostova",
+          "context": "discovery call",
+          "content": "Dr. Lin Chen (Head of Computational Biology): Processing CRISPR sequencing variants requires coordinating 30+ HPC nodes. We need reliable stateful memory across long-running 12-hour compute jobs.\nElena Rostova: SynapseFlow persists multi-turn execution graphs and integrates directly with Azure Batch and HPC cluster queues.\nDr. Lin Chen: NimbleStack crashed repeatedly on jobs exceeding 2 hours due to memory leaks. If you can prove state persistence over 12 hours, we will move forward immediately."
+        },
+        {
+          "id": "int-ab-2",
+          "dealId": "deal-apex-biotech",
+          "type": "demo",
+          "title": "12-Hour Long-Running Compute Simulation",
+          "timestamp": "2026-09-18T15:00:00Z",
+          "author": "Elena Rostova",
+          "context": "poc validation",
+          "content": "Executed synthetic 12-hour genomic alignment run. SynapseFlow recovered state seamlessly across node interruptions.\nDr. Lin Chen: Flawless execution. Preparing statement of work for $390k ARR."
+        }
+      ]
+    },
+    {
+      "id": "deal-horizon-media",
+      "name": "Horizon Digital - Automated Content Localization",
+      "company": "Horizon Media Group",
+      "industry": "Media & Entertainment",
+      "stage": "Procurement",
+      "value": 210000,
+      "owner": "Michael Chang",
+      "closeDate": "2026-10-10",
+      "lastContactDate": "2026-09-26",
+      "risk": {
+        "level": "low",
+        "score": 18,
+        "reason": "Procurement redlines completed; final signature pending CFO approval",
+        "contributingFactors": [
+          "Legal approved MSA",
+          "Phased onboarding planned"
+        ],
+        "lastAssessed": "2026-09-26"
+      },
+      "nextStep": "Receive countersigned Enterprise Master Services Agreement by Oct 2",
+      "competitors": [
+        "ApexCloud Enterprise"
+      ],
+      "tags": [
+        "deal:deal-horizon-media",
+        "industry:media",
+        "stage:procurement"
+      ],
+      "interactions": [
+        {
+          "id": "int-hm-1",
+          "dealId": "deal-horizon-media",
+          "type": "discovery_call",
+          "title": "Localization Engine Scoping",
+          "timestamp": "2026-07-05T14:00:00Z",
+          "author": "Michael Chang",
+          "context": "discovery call",
+          "content": "VP Content Claire Dubois: We distribute video in 42 languages. Manual subtitle localization and cultural adaptation takes 6 days per episode.\nMichael Chang: SynapseFlow orchestrates multi-agent translation with cultural glossaries and automated audio sync."
+        },
+        {
+          "id": "int-hm-2",
+          "dealId": "deal-horizon-media",
+          "type": "pricing_call",
+          "title": "Commercial Agreement Finalization",
+          "timestamp": "2026-08-25T11:30:00Z",
+          "author": "Michael Chang",
+          "context": "pricing call",
+          "content": "Offered $210k ARR with phased language expansion. Claire Dubois approved and forwarded contract to Procurement."
+        }
+      ]
+    },
+    {
+      "id": "deal-solargrid-energy",
+      "name": "SolarGrid Energy - Smart Inverter Grid Agent",
+      "company": "SolarGrid Dynamics",
+      "industry": "Clean Energy & Utilities",
+      "stage": "Solutioning",
+      "value": 480000,
+      "owner": "Sarah Jenkins",
+      "closeDate": "2026-11-30",
+      "lastContactDate": "2026-09-27",
+      "risk": {
+        "level": "medium",
+        "score": 35,
+        "reason": "Strict NERC-CIP utility cybersecurity requirements; competitor ApexCloud bidding",
+        "contributingFactors": [
+          "High compliance bar",
+          "Grid load forecasting POC in progress"
+        ],
+        "lastAssessed": "2026-09-27"
+      },
+      "nextStep": "Deliver NERC-CIP isolation architecture review to Chief Security Officer",
+      "competitors": [
+        "ApexCloud Enterprise"
+      ],
+      "tags": [
+        "deal:deal-solargrid-energy",
+        "industry:energy",
+        "tier:enterprise"
+      ],
+      "interactions": [
+        {
+          "id": "int-sg-1",
+          "dealId": "deal-solargrid-energy",
+          "type": "discovery_call",
+          "title": "Grid Balancing Automation Discovery",
+          "timestamp": "2026-08-10T10:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "discovery call",
+          "content": "VP Grid Operations Henrik Lind: Solar volatility causes voltage spikes. We need real-time inverter dispatch under 100ms across 400 utility substations.\nSarah Jenkins: SynapseFlow runs on Azure IoT Edge nodes with sub-25ms response."
+        },
+        {
+          "id": "int-sg-2",
+          "dealId": "deal-solargrid-energy",
+          "type": "security_review",
+          "title": "NERC-CIP Critical Infrastructure Scoping",
+          "timestamp": "2026-09-15T14:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "security review",
+          "content": "Henrik Lind: Inverters can never be addressed from the public web.\nMarkus (Solutions Architect): SynapseFlow edge agents run completely air-gapped with unidirectional telemetry diodes."
+        }
+      ]
+    },
+    {
+      "id": "deal-insuraprime-life",
+      "name": "InsuraPrime - Claims Adjudication Copilot",
+      "company": "InsuraPrime Mutual",
+      "industry": "Insurance",
+      "stage": "Negotiation",
+      "value": 360000,
+      "owner": "Elena Rostova",
+      "closeDate": "2026-10-25",
+      "lastContactDate": "2026-09-28",
+      "risk": {
+        "level": "low",
+        "score": 25,
+        "reason": "CFO signed off on ROI business case ($2.4M claims processing savings)",
+        "contributingFactors": [
+          "Strong executive sponsor",
+          "Legal reviewing MSA"
+        ],
+        "lastAssessed": "2026-09-28"
+      },
+      "nextStep": "Finalize legal indemnification clauses for fraud decisioning liability",
+      "competitors": [
+        "ApexCloud Enterprise",
+        "NimbleStack Pro"
+      ],
+      "tags": [
+        "deal:deal-insuraprime-life",
+        "industry:insurance",
+        "tier:enterprise"
+      ],
+      "interactions": [
+        {
+          "id": "int-ip-1",
+          "dealId": "deal-insuraprime-life",
+          "type": "discovery_call",
+          "title": "Claims Processing Efficiency Discovery",
+          "timestamp": "2026-07-15T15:00:00Z",
+          "author": "Elena Rostova",
+          "context": "discovery call",
+          "content": "Chief Claims Officer Patricia Gomez: Adjusters spend 40% of time reading police reports and medical bills. We need multi-modal document extraction.\nElena Rostova: SynapseFlow extracts medical codes and fraud indicators in under 3 seconds per claim with 99.4% accuracy."
+        },
+        {
+          "id": "int-ip-2",
+          "dealId": "deal-insuraprime-life",
+          "type": "pricing_call",
+          "title": "Business Case & Commercial Presentation",
+          "timestamp": "2026-09-02T11:00:00Z",
+          "author": "Elena Rostova",
+          "context": "pricing negotiation",
+          "content": "Presented $360k ARR 2-year agreement. Patricia Gomez: The $2.4M annual labor savings justifies the investment. Approved to Legal."
+        }
+      ]
+    },
+    {
+      "id": "deal-aeroengine-mfg",
+      "name": "AeroEngine Corp - Predictive Maintenance Mesh",
+      "company": "AeroEngine Global Manufacturing",
+      "industry": "Aerospace & Manufacturing",
+      "stage": "Closed Won",
+      "value": 540000,
+      "owner": "Sarah Jenkins",
+      "closeDate": "2026-08-30",
+      "lastContactDate": "2026-08-30",
+      "risk": {
+        "level": "low",
+        "score": 8,
+        "reason": "Closed won multi-year aerospace contract with ITAR compliance",
+        "contributingFactors": [
+          "Signed 3-year agreement",
+          "ITAR enclave verified"
+        ],
+        "lastAssessed": "2026-08-30"
+      },
+      "nextStep": "Onboard propulsion engineering teams across 4 assembly plants",
+      "competitors": [
+        "ApexCloud Enterprise"
+      ],
+      "tags": [
+        "deal:deal-aeroengine-mfg",
+        "industry:aerospace",
+        "outcome:won"
+      ],
+      "outcome": {
+        "status": "won",
+        "closedAt": "2026-08-30",
+        "primaryReason": "ITAR compliance and on-premise Azure Stack Hub edge deployment capability",
+        "winningOrLosingTactics": "Demonstrated air-gapped Azure Stack Hub agent orchestration; ApexCloud required public cloud multi-tenant telemetry."
+      },
+      "interactions": [
+        {
+          "id": "int-ae-1",
+          "dealId": "deal-aeroengine-mfg",
+          "type": "discovery_call",
+          "title": "Turbine Telemetry Discovery with VP Quality",
+          "timestamp": "2026-05-20T13:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "discovery call",
+          "content": "VP Quality Frank Miller: Commercial jet turbine testing produces 50TB of vibration data per test. Defense contracts require strict ITAR air-gapping.\nSarah Jenkins: We deploy directly into Azure Stack Hub inside your SCIF facilities."
+        },
+        {
+          "id": "int-ae-2",
+          "dealId": "deal-aeroengine-mfg",
+          "type": "crm_note",
+          "title": "ITAR Air-Gap Pilot and Contract Signature",
+          "timestamp": "2026-08-30T16:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "deal closed",
+          "content": "Closed Won $540k ARR 3-year contract ($1.62M TCV). Winning tactic: Air-gapped on-premise deployment against ApexCloud public telemetry requirement."
+        }
+      ]
+    },
+    {
+      "id": "deal-edulearn-ai",
+      "name": "EduLearn Systems - Adaptive Learning Engine",
+      "company": "EduLearn Digital",
+      "industry": "EdTech",
+      "stage": "Discovery",
+      "value": 175000,
+      "owner": "Michael Chang",
+      "closeDate": "2026-12-01",
+      "lastContactDate": "2026-09-26",
+      "risk": {
+        "level": "low",
+        "score": 20,
+        "reason": "Discovery proceeding well with Provost and Head of Curriculum",
+        "contributingFactors": [
+          "Strong user demand",
+          "FERPA compliance verified"
+        ],
+        "lastAssessed": "2026-09-26"
+      },
+      "nextStep": "Schedule technical pilot scoping call with Academic IT Director",
+      "competitors": [
+        "NimbleStack Pro"
+      ],
+      "tags": [
+        "deal:deal-edulearn-ai",
+        "industry:edtech",
+        "tier:growth"
+      ],
+      "interactions": [
+        {
+          "id": "int-el-1",
+          "dealId": "deal-edulearn-ai",
+          "type": "discovery_call",
+          "title": "Student Tutor Architecture Discovery",
+          "timestamp": "2026-09-20T14:00:00Z",
+          "author": "Michael Chang",
+          "context": "discovery call",
+          "content": "Head of Curriculum Maya Patel: We serve 120,000 university students. We need an adaptive Socratic math tutor that personalizes hints based on mastery history.\nMichael Chang: SynapseFlow maintains continuous student mastery graphs with zero FERPA student data retention."
+        }
+      ]
+    },
+    {
+      "id": "deal-omnicare-pharma",
+      "name": "OmniCare Pharma - Regulatory Submission Agent",
+      "company": "OmniCare BioSciences",
+      "industry": "Pharmaceuticals",
+      "stage": "Closed Won",
+      "value": 460000,
+      "owner": "Elena Rostova",
+      "closeDate": "2026-09-18",
+      "lastContactDate": "2026-09-18",
+      "risk": {
+        "level": "low",
+        "score": 10,
+        "reason": "Closed won; 21 CFR Part 11 audit trail validated",
+        "contributingFactors": [
+          "Signed agreement",
+          "Audit trail compliance verified"
+        ],
+        "lastAssessed": "2026-09-18"
+      },
+      "nextStep": "Initiate FDA eCTD electronic filing integration",
+      "competitors": [
+        "ApexCloud Enterprise"
+      ],
+      "tags": [
+        "deal:deal-omnicare-pharma",
+        "industry:pharma",
+        "outcome:won"
+      ],
+      "outcome": {
+        "status": "won",
+        "closedAt": "2026-09-18",
+        "primaryReason": "Immutable 21 CFR Part 11 electronic signature audit trails and Open-Standards XML export",
+        "winningOrLosingTactics": "Delivered pre-packaged validation documentation and demonstrated tamper-proof audit trails for FDA reviewers."
+      },
+      "interactions": [
+        {
+          "id": "int-oc-1",
+          "dealId": "deal-omnicare-pharma",
+          "type": "discovery_call",
+          "title": "FDA Dossier Automation Discovery",
+          "timestamp": "2026-06-25T11:00:00Z",
+          "author": "Elena Rostova",
+          "context": "discovery call",
+          "content": "VP Regulatory Affairs Simon Vance: Preparing an IND filing takes 8,000 document hours. We need an agent that cross-references toxicology data with clinical protocol tables.\nElena Rostova: SynapseFlow maintains cryptographic lineage across every cited scientific table."
+        },
+        {
+          "id": "int-oc-2",
+          "dealId": "deal-omnicare-pharma",
+          "type": "crm_note",
+          "title": "Contract Execution & Closed Won",
+          "timestamp": "2026-09-18T15:30:00Z",
+          "author": "Elena Rostova",
+          "context": "deal closed",
+          "content": "Closed Won $460,000 ARR with 3-year term. Key winning tactic: 21 CFR Part 11 audit trail compliance documentation vs ApexCloud proprietary lock-in."
+        }
+      ]
+    },
+    {
+      "id": "deal-razorpay-payments",
+      "name": "Razorpay - Real-Time UPI Fraud & Ledger Agent",
+      "company": "Razorpay Software Pvt Ltd",
+      "industry": "Fintech / Payments Infra",
+      "stage": "Negotiation",
+      "value": 220000,
+      "owner": "Arjun Mehta",
+      "closeDate": "2026-10-28",
+      "lastContactDate": "2026-09-26",
+      "risk": {
+        "level": "low",
+        "score": 24,
+        "reason": "PCI-DSS 4.0 InfoSec audit cleared; CPO requested final INR pricing structure with localized Azure central-india latency SLA.",
+        "contributingFactors": [
+          "VP Security approved zero-retention HSM tokenization architecture",
+          "Salesforce Agentforce rejected due to data residency in US-East",
+          "Commercial term sheet submitted at ₹1.85 Cr ($220k)"
+        ],
+        "lastAssessed": "2026-09-26"
+      },
+      "nextStep": "Submit localized Master Services Agreement (MSA) with Azure Pune/Mumbai region pinning to legal counsel",
+      "competitors": [
+        "Salesforce Agentforce"
+      ],
+      "tags": [
+        "deal:deal-razorpay-payments",
+        "region:apac",
+        "industry:fintech",
+        "competitor:salesforce"
+      ],
+      "interactions": [
+        {
+          "id": "int-rzp-1",
+          "dealId": "deal-razorpay-payments",
+          "type": "discovery_call",
+          "title": "Discovery with Head of Platform & VP Engineering",
+          "timestamp": "2026-08-10T11:00:00Z",
+          "author": "Arjun Mehta",
+          "context": "discovery call",
+          "content": "Arjun Mehta: Thanks for taking the time, Vikram and Sneha. How is Razorpay approaching AI agents for UPI transaction dispute resolution?\nVikram Malhotra (Head of Platform): Look... honestly, we get pitched 5 AI tools a week. Salesforce came in last Thursday showing Agentforce. But here is the thing: we process 14,000 TPS on peak UPI days.\nSneha Iyer (VP Engineering): Exactly. If an LLM agent hallucinates a ledger settlement or routes customer card numbers outside RBI data localization boundaries, we get penalized by the Reserve Bank of India immediately.\nArjun Mehta: Our architecture runs entirely in your Azure Central India / Mumbai subscription with zero telemetry leaving your VPC.\nVikram Malhotra: That sounds promising. We need sub-40ms decisioning for instant chargeback validation. Send over the architectural spec."
+        },
+        {
+          "id": "int-rzp-2",
+          "dealId": "deal-razorpay-payments",
+          "type": "security_review",
+          "title": "RBI & PCI-DSS 4.0 Compliance Technical Audit",
+          "timestamp": "2026-08-25T14:30:00Z",
+          "author": "Arjun Mehta",
+          "context": "security audit",
+          "content": "Attendees: Arjun Mehta, Vikram Malhotra, Ananya Desai (Chief Information Security Officer).\nAnanya Desai (CISO): I reviewed your SOC2 and PCI-DSS compliance report. Salesforce Agentforce stores agent memory buffers in US multi-tenant shards. Does SynapseFlow support Hardware Security Module (HSM) key isolation on Azure?\nMarkus (Solutions Architect): Yes. All memory embeddings and session state are encrypted with your Azure Key Vault Managed HSM keys.\nAnanya Desai: That completely satisfies our RBI mandate for payment aggregation. Infosec gives preliminary approval."
+        },
+        {
+          "id": "int-rzp-3",
+          "dealId": "deal-razorpay-payments",
+          "type": "pricing_call",
+          "title": "Commercial Negotiation with Finance & Procurement",
+          "timestamp": "2026-09-26T16:00:00Z",
+          "author": "Arjun Mehta",
+          "context": "pricing call",
+          "content": "Vikram Malhotra: Finance reviewed the quote of ₹1.85 Cr ($220,000 ARR). Salesforce offered a 45% discount on their CRM bundle, but their compliance risk is too high. If you can include dedicated 99.99% latency SLA on Azure Central India, we will execute by mid-October.\nArjun Mehta: Done. We will append the 99.99% uptime and sub-40ms latency SLA into the commercial addendum."
+        }
+      ]
+    },
+    {
+      "id": "deal-swiggy-delivery",
+      "name": "Swiggy - Hyperlocal Dispatch & Driver Support Copilot",
+      "company": "Swiggy Limited",
+      "industry": "Logistics / Quick Commerce",
+      "stage": "Evaluation",
+      "value": 290000,
+      "owner": "Pooja Nair",
+      "closeDate": "2026-11-15",
+      "lastContactDate": "2026-09-27",
+      "risk": {
+        "level": "medium",
+        "score": 42,
+        "reason": "Engineering team initially strongly resisted integration complexity; stance reversed after 2-day sandbox trial showed Kafka connector zero-code setup.",
+        "contributingFactors": [
+          "VP Eng Rajesh Kumar reversed from hard objection to strong internal sponsor",
+          "CPO requested multi-lingual vernacular support benchmark (Hindi, Telugu, Kannada, Tamil)",
+          "Budget allocated under Q3 Quick Commerce productivity pool"
+        ],
+        "lastAssessed": "2026-09-27"
+      },
+      "nextStep": "Demonstrate 4-language Indian vernacular response benchmark to CPO Rohit Sen on Tuesday",
+      "competitors": [
+        "Gong / Clari",
+        "Internal DIY Python Stack"
+      ],
+      "tags": [
+        "deal:deal-swiggy-delivery",
+        "region:apac",
+        "industry:logistics",
+        "competitor:gong"
+      ],
+      "interactions": [
+        {
+          "id": "int-swg-1",
+          "dealId": "deal-swiggy-delivery",
+          "type": "discovery_call",
+          "title": "Initial Discovery - Heavy Engineering Resistance",
+          "timestamp": "2026-08-14T10:00:00Z",
+          "author": "Pooja Nair",
+          "context": "discovery call",
+          "content": "Pooja Nair: Thanks Rajesh and Rohit for meeting. We understand you manage over 300,000 delivery delivery partners across 500 Indian cities.\nRajesh Kumar (VP Engineering): Look Pooja, I have to be blunt. My team has zero bandwidth to rewrite our Go dispatch engine or integrate a complicated SDK. Every vendor claims easy integration, but it usually takes 6 months of engineering hell. Unless this plugs directly into our Apache Kafka streams without custom wrapper code, it is a hard no for me.\nRohit Sen (CPO): We do have a real problem though with 40,000 daily delivery partner support tickets in vernacular languages.\nPooja Nair: What if we set up a sandbox using our native Kafka event consumer in 48 hours without touching your Go core?\nRajesh Kumar: If you can ingest 5,000 sample dispatch events from our test topic without dropping a packet, I'll review it. Otherwise, let's not waste each other's time."
+        },
+        {
+          "id": "int-swg-2",
+          "dealId": "deal-swiggy-delivery",
+          "type": "sandbox_review",
+          "title": "Sandbox Validation & Major Stakeholder Stance Reversal",
+          "timestamp": "2026-08-22T15:00:00Z",
+          "author": "Pooja Nair",
+          "context": "sandbox debrief",
+          "content": "Attendees: Pooja Nair, Rajesh Kumar (VP Eng), Rohit Sen (CPO).\nRajesh Kumar (VP Engineering): I want to start by apologizing for my skepticism last week. We connected your managed Kafka stream sink on Tuesday morning. In less than 45 minutes, your engine was auto-extracting address anomalies and driver dispute sentiment across 20,000 live events with zero packet drops and under 30ms latency.\nRohit Sen: That is remarkable.\nRajesh Kumar: I have completely changed my mind. This eliminates 4 months of in-house microservice engineering. I am going to push this as a core Q3 initiative.\nPooja Nair: That is fantastic to hear, Rajesh. Let's benchmark the vernacular language models next."
+        },
+        {
+          "id": "int-swg-3",
+          "dealId": "deal-swiggy-delivery",
+          "type": "technical_demo",
+          "title": "Vernacular Multi-Lingual Driver Voice & Chat Benchmark",
+          "timestamp": "2026-09-27T11:30:00Z",
+          "author": "Pooja Nair",
+          "context": "vernacular demo",
+          "content": "Demonstrated real-time audio transcript synthesis in Hindi, Kannada, Telugu, and Tamil for delivery partner dispute calls.\nRohit Sen (CPO): The dialect handling in Kannada and Hindi is remarkably accurate.\nRajesh Kumar: Let's fast-track commercial review for ₹2.40 Cr ($290,000 ARR)."
+        }
+      ]
+    },
+    {
+      "id": "deal-zerodha-brokerage",
+      "name": "Zerodha - High-Throughput Trade Compliance Intelligence",
+      "company": "Zerodha Broking Limited",
+      "industry": "Capital Markets / WealthTech",
+      "stage": "Proposal",
+      "value": 385000,
+      "owner": "Arjun Mehta",
+      "closeDate": "2026-11-30",
+      "lastContactDate": "2026-09-25",
+      "risk": {
+        "level": "low",
+        "score": 18,
+        "reason": "Engineering leadership satisfied with completely self-hosted container deployment with zero external SaaS telemetry.",
+        "contributingFactors": [
+          "Zero cloud egress requirement validated",
+          "SEBI regulatory compliance review in final stage",
+          "High executive champion alignment"
+        ],
+        "lastAssessed": "2026-09-25"
+      },
+      "nextStep": "Deliver signed air-gapped container specification to systems engineering team",
+      "competitors": [
+        "In-House Custom C++ Engine"
+      ],
+      "tags": [
+        "deal:deal-zerodha-brokerage",
+        "region:apac",
+        "industry:fintech",
+        "tier:enterprise"
+      ],
+      "interactions": [
+        {
+          "id": "int-zrd-1",
+          "dealId": "deal-zerodha-brokerage",
+          "type": "discovery_call",
+          "title": "Architecture Review with CTO & Core Systems Team",
+          "timestamp": "2026-08-05T14:00:00Z",
+          "author": "Arjun Mehta",
+          "context": "architecture call",
+          "content": "Kailash Nadh (CTO): We run a lean, self-sufficient open-source infrastructure. We do not use third-party proprietary black boxes. If this software cannot run inside our private Kubernetes clusters with zero network egress to external vendors, we cannot even discuss pricing.\nArjun Mehta: SynapseFlow provides fully packaged Docker / OCI containers with offline Hindsight memory models that operate in strict air-gapped environments.\nKailash Nadh: Run a benchmark on 500,000 order book logs on an isolated server and send the binary telemetry."
+        },
+        {
+          "id": "int-zrd-2",
+          "dealId": "deal-zerodha-brokerage",
+          "type": "technical_validation",
+          "title": "Air-Gapped Performance Test on 10M Market Tick Events",
+          "timestamp": "2026-09-25T16:30:00Z",
+          "author": "Arjun Mehta",
+          "context": "validation review",
+          "content": "Completed validation of 10M market tick audit events. Processed in 4.2 seconds with zero external network packets.\nKailash Nadh: The architecture is clean, minimal, and respects Unix philosophy. Proposal for ₹3.2 Cr approved for contract preparation."
+        }
+      ]
+    },
+    {
+      "id": "deal-freshworks-crm",
+      "name": "Freshworks - Unified CX Agentic Routing Suite",
+      "company": "Freshworks Inc",
+      "industry": "Enterprise Software / CRM",
+      "stage": "Negotiation",
+      "value": 195000,
+      "owner": "Sarah Jenkins",
+      "closeDate": "2026-10-20",
+      "lastContactDate": "2026-09-28",
+      "risk": {
+        "level": "medium",
+        "score": 35,
+        "reason": "Procurement requested price match against Salesforce Agentforce bundle discount; countered with Phased Milestone Ramp.",
+        "contributingFactors": [
+          "Salesforce offering 40% discount if bundled with Sales Cloud",
+          "Freshworks Head of Product strongly prefers our open API architecture",
+          "Phased milestone rollout proposed to bypass procurement deadlock"
+        ],
+        "lastAssessed": "2026-09-28"
+      },
+      "nextStep": "Finalize Schedule A pricing tier with VP Procurement on Monday",
+      "competitors": [
+        "Salesforce Agentforce",
+        "Gong / Clari"
+      ],
+      "tags": [
+        "deal:deal-freshworks-crm",
+        "industry:saas",
+        "competitor:salesforce"
+      ],
+      "interactions": [
+        {
+          "id": "int-fw-1",
+          "dealId": "deal-freshworks-crm",
+          "type": "discovery_call",
+          "title": "Initial Discovery with VP Product & Engineering",
+          "timestamp": "2026-08-18T15:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "discovery call",
+          "content": "Deepak Balaji (VP Product): We need an intelligent agent layer that routes customer escalation tickets across our omnichannel suite. Salesforce is pitching Agentforce heavily.\nSarah Jenkins: Agentforce locks you into Salesforce Data Cloud and charges per conversation token. We offer flat-rate instance licensing with full data ownership.\nDeepak Balaji: That is our biggest grievance with Salesforce. Let's do a fast-track POC."
+        },
+        {
+          "id": "int-fw-2",
+          "dealId": "deal-freshworks-crm",
+          "type": "pricing_call",
+          "title": "Commercial Negotiation with Procurement",
+          "timestamp": "2026-09-28T14:00:00Z",
+          "author": "Sarah Jenkins",
+          "context": "pricing negotiation",
+          "content": "Meera Sen (Procurement Director): Salesforce offered to discount Agentforce down to $140k. Your $195k quote is higher.\nSarah Jenkins: When we calculate Salesforce's per-turn agent token fees at your volume, their year-1 cost reaches $260k. We propose a Phased Milestone Ramp: $45k for Phase 1 onboarding, scaling to $195k on general availability.\nMeera Sen: That phased milestone ramp removes our procurement risk. We accept the phased terms."
+        }
+      ]
+    }
+  ]
+}

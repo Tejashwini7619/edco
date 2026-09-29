@@ -1,0 +1,38 @@
+{
+  "scenario": "Datawise is in the deal and the buyer raised a security/compliance objection. What should I do?",
+  "competitor": "Datawise",
+  "objection_type": "security_compliance",
+  "rules": [
+    {
+      "id": "rule-sec-1",
+      "criterion": "Recommends conducting an early security-first review (SOC 2, RBI data residency, dedicated single-tenant VPC isolation)",
+      "weight": 1,
+      "check": "recommends_security"
+    },
+    {
+      "id": "rule-ratio-2",
+      "criterion": "Cites an empirical win/loss ratio consistent with seed data (e.g. 4 of 5 won with security-first review; 3 of 3 lost with discounting)",
+      "weight": 1,
+      "check": "cites_win_loss_ratio"
+    },
+    {
+      "id": "rule-disc-3",
+      "criterion": "Explicitly warns against price discounting or matching Datawise price concessions",
+      "weight": 1,
+      "check": "warns_against_discounting"
+    },
+    {
+      "id": "rule-deals-4",
+      "criterion": "Cites specific past deal IDs or company names from closed deal history (e.g. FinEdge Capital, Kuber Payments Hub, MediPulse Health, Bharat HealthTech, SecureNet Cyberworks)",
+      "weight": 1,
+      "check": "cites_valid_past_deal_ids"
+    }
+  ],
+  "expected_valid_deal_ids": [
+    "deal-002",
+    "deal-004",
+    "deal-006",
+    "deal-008",
+    "deal-012"
+  ]
+}

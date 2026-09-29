@@ -1,0 +1,1795 @@
+{
+  "run_id": "run-2026-09-29T12-31-44-138Z",
+  "timestamp": "2026-09-29T12:32:12.780Z",
+  "ground_truth_hash": "7980653ea8bab69be83f400ace9ccad9cc5ae993ccdfcbeae8d8ce6dd70b104a",
+  "generator_model": "openai/gpt-oss-120b",
+  "judge_model": "openai/gpt-oss-120b",
+  "fallback_model": "openai/gpt-oss-20b",
+  "is_quick_run": true,
+  "duration_seconds": 29,
+  "total_llm_calls": 98,
+  "human_agreement_pct": 95,
+  "experiment_1": {
+    "deal_id": "deal-001",
+    "deal_name": "Zephyr Logistics India - Revenue & Tariff Leakage Analytics",
+    "checkpoints": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "repeats_per_condition": 1,
+    "conditions": {
+      "ON": [
+        {
+          "checkpoint": 1,
+          "interactions_count": 1,
+          "knowable_items_count": 4,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0.92,
+          "mean_tokens": 540,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "ON",
+              "checkpoint": 1,
+              "raw_brief": "",
+              "prompt_token_count": 540,
+              "duration_ms": 680,
+              "knowable_items_count": 4,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0.92,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 2,
+          "interactions_count": 2,
+          "knowable_items_count": 7,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0.92,
+          "mean_tokens": 730,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "ON",
+              "checkpoint": 2,
+              "raw_brief": "",
+              "prompt_token_count": 730,
+              "duration_ms": 428,
+              "knowable_items_count": 7,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0.92,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 3,
+          "interactions_count": 3,
+          "knowable_items_count": 9,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0.92,
+          "mean_tokens": 930,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "ON",
+              "checkpoint": 3,
+              "raw_brief": "",
+              "prompt_token_count": 930,
+              "duration_ms": 364,
+              "knowable_items_count": 9,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0.92,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-cmp-1",
+                  "category": "competitor",
+                  "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-3",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 4,
+          "interactions_count": 4,
+          "knowable_items_count": 12,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0.92,
+          "mean_tokens": 1134,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "ON",
+              "checkpoint": 4,
+              "raw_brief": "",
+              "prompt_token_count": 1134,
+              "duration_ms": 448,
+              "knowable_items_count": 12,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0.92,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-cmp-1",
+                  "category": "competitor",
+                  "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-3",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-4",
+                  "category": "stakeholder",
+                  "fact": "Deepak Verma is the CFO of BlueDart Freight Network who served as reference customer.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-tac-1",
+                  "category": "tactic",
+                  "fact": "BlueDart reference call demonstrated INR 1.14 Crores unbilled freight recovery and a 92-day payback period.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-2",
+                  "category": "change",
+                  "fact": "CFO Harish Iyer reversed his skeptical stance after the reference call and agreed to restructure commercials around milestone payments.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 5,
+          "interactions_count": 5,
+          "knowable_items_count": 14,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0.92,
+          "mean_tokens": 1351,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "ON",
+              "checkpoint": 5,
+              "raw_brief": "",
+              "prompt_token_count": 1351,
+              "duration_ms": 373,
+              "knowable_items_count": 14,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0.92,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-cmp-1",
+                  "category": "competitor",
+                  "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-3",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-4",
+                  "category": "stakeholder",
+                  "fact": "Deepak Verma is the CFO of BlueDart Freight Network who served as reference customer.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-tac-1",
+                  "category": "tactic",
+                  "fact": "BlueDart reference call demonstrated INR 1.14 Crores unbilled freight recovery and a 92-day payback period.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-2",
+                  "category": "change",
+                  "fact": "CFO Harish Iyer reversed his skeptical stance after the reference call and agreed to restructure commercials around milestone payments.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-5",
+                  "category": "stakeholder",
+                  "fact": "Rajesh Kulkarni is the new VP of Enterprise Architecture questioning whether to build custom Apache Flink stream processing in-house.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-3",
+                  "category": "change",
+                  "fact": "Champion Karan Singhania shifted from highly enthusiastic to hesitant and nervous regarding warehouse user adoption and shift handover friction.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        }
+      ],
+      "OFF": [
+        {
+          "checkpoint": 1,
+          "interactions_count": 1,
+          "knowable_items_count": 4,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 539,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "OFF",
+              "checkpoint": 1,
+              "raw_brief": "",
+              "prompt_token_count": 539,
+              "duration_ms": 37,
+              "knowable_items_count": 4,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 2,
+          "interactions_count": 2,
+          "knowable_items_count": 7,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 502,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "OFF",
+              "checkpoint": 2,
+              "raw_brief": "",
+              "prompt_token_count": 502,
+              "duration_ms": 38,
+              "knowable_items_count": 7,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 3,
+          "interactions_count": 3,
+          "knowable_items_count": 9,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 513,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "OFF",
+              "checkpoint": 3,
+              "raw_brief": "",
+              "prompt_token_count": 513,
+              "duration_ms": 38,
+              "knowable_items_count": 9,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-cmp-1",
+                  "category": "competitor",
+                  "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-3",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 4,
+          "interactions_count": 4,
+          "knowable_items_count": 12,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 516,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "OFF",
+              "checkpoint": 4,
+              "raw_brief": "",
+              "prompt_token_count": 516,
+              "duration_ms": 43,
+              "knowable_items_count": 12,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-cmp-1",
+                  "category": "competitor",
+                  "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-3",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-4",
+                  "category": "stakeholder",
+                  "fact": "Deepak Verma is the CFO of BlueDart Freight Network who served as reference customer.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-tac-1",
+                  "category": "tactic",
+                  "fact": "BlueDart reference call demonstrated INR 1.14 Crores unbilled freight recovery and a 92-day payback period.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-2",
+                  "category": "change",
+                  "fact": "CFO Harish Iyer reversed his skeptical stance after the reference call and agreed to restructure commercials around milestone payments.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 5,
+          "interactions_count": 5,
+          "knowable_items_count": 14,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 529,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "OFF",
+              "checkpoint": 5,
+              "raw_brief": "",
+              "prompt_token_count": 529,
+              "duration_ms": 38,
+              "knowable_items_count": 14,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-cmp-1",
+                  "category": "competitor",
+                  "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-3",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-4",
+                  "category": "stakeholder",
+                  "fact": "Deepak Verma is the CFO of BlueDart Freight Network who served as reference customer.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-tac-1",
+                  "category": "tactic",
+                  "fact": "BlueDart reference call demonstrated INR 1.14 Crores unbilled freight recovery and a 92-day payback period.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-2",
+                  "category": "change",
+                  "fact": "CFO Harish Iyer reversed his skeptical stance after the reference call and agreed to restructure commercials around milestone payments.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-5",
+                  "category": "stakeholder",
+                  "fact": "Rajesh Kulkarni is the new VP of Enterprise Architecture questioning whether to build custom Apache Flink stream processing in-house.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-3",
+                  "category": "change",
+                  "fact": "Champion Karan Singhania shifted from highly enthusiastic to hesitant and nervous regarding warehouse user adoption and shift handover friction.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        }
+      ],
+      "STUFFED": [
+        {
+          "checkpoint": 1,
+          "interactions_count": 1,
+          "knowable_items_count": 4,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 555,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "STUFFED",
+              "checkpoint": 1,
+              "raw_brief": "",
+              "prompt_token_count": 555,
+              "duration_ms": 41,
+              "knowable_items_count": 4,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 2,
+          "interactions_count": 2,
+          "knowable_items_count": 7,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 757,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "STUFFED",
+              "checkpoint": 2,
+              "raw_brief": "",
+              "prompt_token_count": 757,
+              "duration_ms": 276,
+              "knowable_items_count": 7,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 3,
+          "interactions_count": 3,
+          "knowable_items_count": 9,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 969,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "STUFFED",
+              "checkpoint": 3,
+              "raw_brief": "",
+              "prompt_token_count": 969,
+              "duration_ms": 46,
+              "knowable_items_count": 9,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-cmp-1",
+                  "category": "competitor",
+                  "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-3",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 4,
+          "interactions_count": 4,
+          "knowable_items_count": 12,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 1186,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "STUFFED",
+              "checkpoint": 4,
+              "raw_brief": "",
+              "prompt_token_count": 1186,
+              "duration_ms": 44,
+              "knowable_items_count": 12,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-cmp-1",
+                  "category": "competitor",
+                  "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-3",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-4",
+                  "category": "stakeholder",
+                  "fact": "Deepak Verma is the CFO of BlueDart Freight Network who served as reference customer.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-tac-1",
+                  "category": "tactic",
+                  "fact": "BlueDart reference call demonstrated INR 1.14 Crores unbilled freight recovery and a 92-day payback period.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-2",
+                  "category": "change",
+                  "fact": "CFO Harish Iyer reversed his skeptical stance after the reference call and agreed to restructure commercials around milestone payments.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        },
+        {
+          "checkpoint": 5,
+          "interactions_count": 5,
+          "knowable_items_count": 14,
+          "mean_recall": 0,
+          "min_recall": 0,
+          "max_recall": 0,
+          "mean_hallucinations": 0,
+          "mean_citation_rate": 0,
+          "mean_tokens": 1415,
+          "runs": [
+            {
+              "run_index": 0,
+              "condition": "STUFFED",
+              "checkpoint": 5,
+              "raw_brief": "",
+              "prompt_token_count": 1415,
+              "duration_ms": 38,
+              "knowable_items_count": 14,
+              "present_accurate_count": 0,
+              "recall_score": 0,
+              "hallucination_count": 0,
+              "citation_rate": 0,
+              "judgements": [
+                {
+                  "item_id": "gt-stk-1",
+                  "category": "stakeholder",
+                  "fact": "Karan Singhania is the VP of Operations and the primary internal project champion.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-2",
+                  "category": "stakeholder",
+                  "fact": "Harish Iyer is the Chief Financial Officer (CFO) and primary financial decision-maker.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-1",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer is skeptical of SaaS ROI due to 4.2% thin freight margins and past failed BI dashboard rollouts.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-1",
+                  "category": "change",
+                  "fact": "Billing reconciliations across 14 warehouse hubs currently take 18 days each month-end across SAP and Tally systems.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-3",
+                  "category": "stakeholder",
+                  "fact": "Ananya Sen is the Lead Data Architect responsible for Snowflake integration and API performance validation.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-com-1",
+                  "category": "commitment",
+                  "fact": "AE promised to send benchmark load test reports and SOC 2 Type II audit documentation by Friday afternoon.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-2",
+                  "category": "objection",
+                  "fact": "Data infra team flagged concern regarding API rate limits under 1.8M month-end transactional spike volumes.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-cmp-1",
+                  "category": "competitor",
+                  "fact": "Competitor Datawise offered their complete analytics suite at INR 22 Lakhs with waived onboarding services.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-obj-3",
+                  "category": "objection",
+                  "fact": "CFO Harish Iyer rejected the INR 45 Lakhs ARR proposal and capped software budget at INR 25 Lakhs all-inclusive.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-4",
+                  "category": "stakeholder",
+                  "fact": "Deepak Verma is the CFO of BlueDart Freight Network who served as reference customer.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-tac-1",
+                  "category": "tactic",
+                  "fact": "BlueDart reference call demonstrated INR 1.14 Crores unbilled freight recovery and a 92-day payback period.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-2",
+                  "category": "change",
+                  "fact": "CFO Harish Iyer reversed his skeptical stance after the reference call and agreed to restructure commercials around milestone payments.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-stk-5",
+                  "category": "stakeholder",
+                  "fact": "Rajesh Kulkarni is the new VP of Enterprise Architecture questioning whether to build custom Apache Flink stream processing in-house.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                },
+                {
+                  "item_id": "gt-chg-3",
+                  "category": "change",
+                  "fact": "Champion Karan Singhania shifted from highly enthusiastic to hesitant and nervous regarding warehouse user adoption and shift handover friction.",
+                  "present": false,
+                  "accurate": false,
+                  "quote": null,
+                  "rationale": "Failed to parse structured judge response."
+                }
+              ],
+              "claims_verified": [],
+              "citations_verified": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "experiment_2": {
+    "scenario": "Datawise is in the deal and the buyer raised a security/compliance objection. What should I do?",
+    "closed_deal_increments": [
+      0,
+      5
+    ],
+    "memory_runs": [
+      {
+        "closed_deals_count": 0,
+        "condition": "MEMORY_ON",
+        "raw_response": "",
+        "prompt_tokens": 0,
+        "duration_ms": 37,
+        "fits_in_context": true,
+        "recommends_security": false,
+        "cites_win_loss_ratio": false,
+        "warns_against_discounting": false,
+        "cites_valid_deal_ids": false,
+        "cited_deal_ids": [],
+        "total_score": 0,
+        "max_possible_score": 4
+      },
+      {
+        "closed_deals_count": 5,
+        "condition": "MEMORY_ON",
+        "raw_response": "",
+        "prompt_tokens": 0,
+        "duration_ms": 62,
+        "fits_in_context": true,
+        "recommends_security": false,
+        "cites_win_loss_ratio": false,
+        "warns_against_discounting": false,
+        "cites_valid_deal_ids": false,
+        "cited_deal_ids": [],
+        "total_score": 0,
+        "max_possible_score": 4
+      }
+    ],
+    "stuffed_runs": [
+      {
+        "closed_deals_count": 0,
+        "condition": "STUFFED",
+        "raw_response": "",
+        "prompt_tokens": 38,
+        "duration_ms": 38,
+        "fits_in_context": true,
+        "recommends_security": false,
+        "cites_win_loss_ratio": false,
+        "warns_against_discounting": false,
+        "cites_valid_deal_ids": false,
+        "cited_deal_ids": [],
+        "total_score": 0,
+        "max_possible_score": 4
+      },
+      {
+        "closed_deals_count": 5,
+        "condition": "STUFFED",
+        "raw_response": "",
+        "prompt_tokens": 2084,
+        "duration_ms": 39,
+        "fits_in_context": true,
+        "recommends_security": false,
+        "cites_win_loss_ratio": false,
+        "warns_against_discounting": false,
+        "cites_valid_deal_ids": false,
+        "cited_deal_ids": [],
+        "total_score": 0,
+        "max_possible_score": 4
+      }
+    ]
+  }
+}
