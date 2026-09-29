@@ -1,0 +1,16 @@
+{
+  "name": "copilot-brag-sheet",
+  "description": "Auto-track AI coding sessions into a structured work impact log. Local-first, MCP-conformant.",
+  "author": {
+    "name": "Microsoft",
+    "url": "https://www.microsoft.com"
+  },
+  "source": {
+    "source": "github",
+    "repo": "microsoft/copilot-brag-sheet"
+  },
+  "homepage": "https://github.com/microsoft/copilot-brag-sheet",
+  "repository": "https://github.com/microsoft/copilot-brag-sheet",
+  "license": "MIT",
+  "keywords": ["copilot-cli", "work-tracker", "brag-sheet", "impact-log", "developer-productivity", "local-first"]
+}

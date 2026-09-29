@@ -1,0 +1,67 @@
+{
+  "name": "copilot-brag-sheet",
+  "version": "1.2.0",
+  "description": "Auto-track AI coding sessions into a structured work log. Local-first, MCP-conformant.",
+  "mcpName": "io.github.microsoft/copilot-brag-sheet",
+  "type": "module",
+  "main": "extension.mjs",
+  "bin": {
+    "copilot-brag-sheet": "./bin/install.mjs",
+    "copilot-brag-sheet-setup": "./bin/setup.mjs",
+    "copilot-brag-sheet-mcp": "./bin/mcp-server.mjs"
+  },
+  "scripts": {
+    "test": "node --test",
+    "eval:seed": "node evals/seed.mjs",
+    "prepublishOnly": "node --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "keywords": [
+    "copilot",
+    "cli",
+    "extension",
+    "brag-sheet",
+    "work-tracker",
+    "developer-tools",
+    "performance-review",
+    "ai-tools",
+    "local-first",
+    "github-copilot"
+  ],
+  "author": "Microsoft",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/copilot-brag-sheet"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "peerDependencies": {
+    "@github/copilot": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@github/copilot": {
+      "optional": true
+    }
+  },
+  "files": [
+    "extension.mjs",
+    "mcp-server.mjs",
+    "lib/",
+    "bin/",
+    "hooks/",
+    "skills/",
+    "evals/",
+    ".claude-plugin/",
+    "agency.json",
+    ".mcp.json",
+    "plugin.json",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ]
+}

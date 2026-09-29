@@ -1,0 +1,11 @@
+node_modules/
+*.tmp.*
+errors.log
+.DS_Store
+Thumbs.db
+test-temp-config-*/
+# WSL/local debug scripts produced while probing the MCP server.
+debug-mcp.sh
+test-mcp-wsl*.sh
+*.tgz
+

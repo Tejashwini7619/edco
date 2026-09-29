@@ -1,0 +1,123 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+  id-token: write  # required for npm provenance attestation
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [18, 20, 22]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+
+  release:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org/'
+
+      - run: npm ci --no-audit --no-fund
+
+      - name: Extract version from tag
+        id: version
+        run: echo "version=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Validate version matches package.json
+        run: |
+          PKG_VERSION=$(node -p "require('./package.json').version")
+          TAG_VERSION="${{ steps.version.outputs.version }}"
+          if [ "$PKG_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::Tag version ($TAG_VERSION) does not match package.json ($PKG_VERSION)"
+            exit 1
+          fi
+
+      - name: Validate tarball contents
+        run: |
+          # Required files that must be in the published tarball.
+          # If we add a new lib/foo.mjs and forget to update package.json's "files"
+          # whitelist, this catches it before the broken publish goes out.
+          required=(
+            extension.mjs
+            mcp-server.mjs
+            agency.json
+            .mcp.json
+            plugin.json
+            package.json
+            bin/install.mjs
+            bin/setup.mjs
+            bin/mcp-server.mjs
+            hooks/hooks.json
+            hooks/post-tool-use.mjs
+            lib/config.mjs
+            lib/git-backup.mjs
+            lib/heuristics.mjs
+            lib/lock.mjs
+            lib/operations.mjs
+            lib/paths.mjs
+            lib/records.mjs
+            lib/render.mjs
+            lib/storage.mjs
+            .claude-plugin/plugin.json
+            evals/brag-sheet.eval.xml
+            evals/fixtures/entries.json
+            evals/seed.mjs
+          )
+          npm pack --dry-run --json > /tmp/pack.json
+          missing=()
+          for f in "${required[@]}"; do
+            jq -e --arg f "$f" '.[0].files[] | select(.path == $f)' /tmp/pack.json > /dev/null \
+              || missing+=("$f")
+          done
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing in tarball:"
+            printf '  - %s\n' "${missing[@]}"
+            exit 1
+          fi
+          echo "Tarball contains all ${#required[@]} required files."
+
+      - name: Extract changelog for this version
+        id: changelog
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          # Extract the section for this version from CHANGELOG.md
+          awk "/^## \[${VERSION}\]/{found=1; next} /^## \[/{if(found) exit} found" CHANGELOG.md > release_notes.md
+          if [ ! -s release_notes.md ]; then
+            echo "No changelog entry found for version $VERSION" > release_notes.md
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3
+        with:
+          body_path: release_notes.md
+          draft: false
+          prerelease: ${{ contains(github.ref_name, '-') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm
+        # Skip pre-release tags (e.g. v1.0.0-rc1) so we can experiment without polluting the registry
+        if: ${{ !contains(github.ref_name, '-') }}
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
